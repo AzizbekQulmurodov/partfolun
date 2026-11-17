@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Azizbek Qulmurodov — Senior Full-Stack & Creative Frontend Developer</title>
+<meta name="description" content="Azizbek Qulmurodov — Senior Full-Stack & Creative Frontend Developer. Futuristik veb-ilovalar, mukammal UI/UX va animatsiyalar.">
+<meta name="theme-color" content="#050816">
+<meta property="og:title" content="Azizbek Qulmurodov — Creative Developer Portfolio">
+<meta property="og:description" content="Kreativ g'oyalarni futuristik raqamli reallikka aylantiraman.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050816'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' text-anchor='middle' fill='%2300D9FF'%3EAQ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* =========================================================
+   AQ // PORTFOLIO — Futuristik Dark Theme
+   ========================================================= */
+:root{
+  --bg:#050816;--bg2:#0A1020;--card:#0D1528;
+  --blue:#2563FF;--cyan:#00D9FF;
+  --text:#F4F7FF;--muted:#9AA8C7;
+  --border:rgba(120,160,255,.18);
+  --grad:linear-gradient(120deg,#2563FF,#00D9FF);
+  --ff:'Space Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --display:'Orbitron','Space Grotesk',system-ui,sans-serif;
+  --nav-h:72px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 10px)}
+html.dlg-open,html.menu-open{overflow:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--ff);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+::selection{background:rgba(0,217,255,.3)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#1a2850;border-radius:10px}
+::-webkit-scrollbar-thumb:hover{background:var(--blue)}
+.ic{width:1.15em;height:1.15em;flex:none;display:inline-block;vertical-align:-.15em}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;background:var(--blue);color:#fff;padding:10px 16px;border-radius:10px;z-index:1000;transition:top .2s}
+.skip:focus{top:12px}
+
+/* ---------- Background layers ---------- */
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.orb{position:fixed;border-radius:50%;filter:blur(90px);opacity:.26;z-index:0;pointer-events:none}
+.orb-a{width:46vmax;height:46vmax;left:-14vmax;top:-12vmax;background:radial-gradient(circle,#2563FF,transparent 65%)}
+.orb-b{width:40vmax;height:40vmax;right:-12vmax;bottom:-14vmax;background:radial-gradient(circle,#00D9FF,transparent 65%);opacity:.16}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:2;background:repeating-linear-gradient(0deg,rgba(255,255,255,.016) 0 1px,transparent 1px 3px)}
+header,main,footer{position:relative;z-index:1}
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--grad);box-shadow:0 0 12px var(--cyan);z-index:200}
+
+/* ---------- Custom cursor ---------- */
+.cursor-dot,.cursor-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:9999;border-radius:50%;opacity:0;transition:opacity .3s}
+.cursor-dot{width:7px;height:7px;margin:-3.5px 0 0 -3.5px;background:var(--cyan);box-shadow:0 0 14px var(--cyan),0 0 30px rgba(0,217,255,.6)}
+.cursor-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1.5px solid rgba(0,217,255,.55);box-shadow:0 0 20px rgba(0,217,255,.25),inset 0 0 14px rgba(0,217,255,.15);transition:opacity .3s,width .25s,height .25s,margin .25s,background .25s,border-color .25s}
+html.has-cursor .cursor-dot,html.has-cursor .cursor-ring{opacity:1}
+html.has-cursor.dlg-open .cursor-dot,html.has-cursor.dlg-open .cursor-ring{opacity:0}
+html.has-cursor:not(.dlg-open),html.has-cursor:not(.dlg-open) *{cursor:none!important}
+.cursor-ring.hot{width:60px;height:60px;margin:-30px 0 0 -30px;background:rgba(0,217,255,.08);border-color:var(--cyan)}
+.cursor-ring.down{width:26px;height:26px;margin:-13px 0 0 -13px}
+
+/* ---------- Layout helpers ---------- */
+.container{width:min(1200px,100% - 40px);margin-inline:auto}
+section{padding:clamp(72px,10vw,120px) 0;position:relative}
+.sec-head{margin-bottom:clamp(32px,5vw,56px)}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;color:var(--cyan);text-transform:uppercase;display:inline-flex;gap:.7em;align-items:center}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.title{font-family:var(--display);font-size:clamp(1.5rem,3.4vw,2.5rem);line-height:1.2;margin:14px 0 12px;font-weight:700}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);max-width:640px}
+
+.glass{--mx:50%;--my:50%;--sa:0;position:relative;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(0,217,255,var(--sa)),transparent 60%),linear-gradient(150deg,rgba(13,21,40,.88),rgba(13,21,40,.58));border:1px solid var(--border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:border-color .3s,box-shadow .3s}
+.glass:hover{--sa:.13;border-color:rgba(0,217,255,.45);box-shadow:0 0 36px rgba(0,217,255,.1),0 12px 40px rgba(0,0,0,.35)}
+.tilt{transition:transform .18s ease-out,border-color .3s,box-shadow .3s;will-change:transform}
+
+/* reveal */
+.js .reveal{opacity:0}
+.js .reveal.in{opacity:1;animation:rise .8s cubic-bezier(.2,.8,.2,1) var(--d,0s) backwards}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;padding:.85em 1.5em;border-radius:14px;font-weight:600;font-size:.95rem;border:1px solid transparent;transition:transform .2s,box-shadow .25s,background .25s,border-color .25s,color .25s;white-space:nowrap}
+.btn-primary{background:var(--grad);color:#021024}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(37,99,255,.55),0 0 24px rgba(0,217,255,.45)}
+.btn-ghost{border-color:var(--border);background:rgba(13,21,40,.55);color:var(--text)}
+.btn-ghost:hover{border-color:var(--cyan);box-shadow:0 0 22px rgba(0,217,255,.25);transform:translateY(-2px)}
+.btn-sm{padding:.55em 1.1em;font-size:.85rem;border-radius:11px}
+.btn[disabled]{opacity:.6;pointer-events:none}
+.icon-btn{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;border:1px solid var(--border);background:rgba(13,21,40,.6);transition:.2s;font-size:1.1rem;flex:none}
+.icon-btn:hover{border-color:var(--cyan);box-shadow:0 0 18px rgba(0,217,255,.3);color:var(--cyan)}
+.icon-btn[aria-pressed="true"]{color:var(--cyan);border-color:rgba(0,217,255,.5)}
+.icon-btn .on{display:none}
+.icon-btn[aria-pressed="true"] .on{display:block}
+.icon-btn[aria-pressed="true"] .off{display:none}
+.pulse-hint{animation:hint 1.8s infinite}
+@keyframes hint{0%{box-shadow:0 0 0 0 rgba(0,217,255,.55)}100%{box-shadow:0 0 0 14px rgba(0,217,255,0)}}
+
+/* ---------- Navbar ---------- */
+.nav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:100;display:flex;align-items:center;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+.nav.scrolled{background:rgba(5,8,22,.74);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--border)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:baseline;gap:8px;font-family:var(--display);font-weight:700;white-space:nowrap}
+.logo b{color:var(--cyan);font-size:1.35rem;letter-spacing:.04em;text-shadow:0 0 12px var(--cyan),0 0 30px rgba(0,217,255,.5)}
+.logo .slash{color:var(--blue);font-size:.95rem}
+.logo .lname{color:var(--muted);font-size:.82rem;font-weight:500;display:none}
+@media(min-width:520px){.logo .lname{display:inline}}
+.nav-links{display:none;gap:2px}
+.nav-links a{padding:.5em .8em;border-radius:10px;font-size:.88rem;color:var(--muted);transition:color .2s;position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-links a.active::after{content:"";position:absolute;left:.8em;right:.8em;bottom:1px;height:2px;border-radius:2px;background:var(--grad);box-shadow:0 0 10px var(--cyan)}
+.nav-tools{display:flex;align-items:center;gap:10px}
+.nav-cta{display:none}
+.burger{width:42px;height:42px;border-radius:12px;border:1px solid var(--border);display:grid;place-content:center;gap:5px;background:rgba(13,21,40,.6);flex:none}
+.burger span{display:block;width:20px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:1240px){.nav-links{display:flex}.nav-cta{display:inline-flex}.burger{display:none}}
+
+.mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(5,8,22,.97);backdrop-filter:blur(18px);display:flex;flex-direction:column;justify-content:center;gap:4px;padding:calc(var(--nav-h) + 16px) 28px 32px;clip-path:circle(0% at calc(100% - 42px) 36px);visibility:hidden;transition:clip-path .55s cubic-bezier(.7,0,.2,1),visibility 0s .55s;overflow:auto}
+.mobile-menu.open{clip-path:circle(150% at calc(100% - 42px) 36px);visibility:visible;transition:clip-path .55s cubic-bezier(.7,0,.2,1),visibility 0s}
+.m-link{display:flex;justify-content:space-between;align-items:center;font-family:var(--display);font-size:clamp(1.15rem,4.6vw,1.6rem);padding:.5em 0;border-bottom:1px solid var(--border);opacity:0;transform:translateX(24px);transition:opacity .4s,transform .4s,color .2s}
+.m-link small{font-family:var(--mono);color:var(--cyan);font-size:.78rem}
+.m-link:hover{color:var(--cyan)}
+.mobile-menu.open .m-link,.mobile-menu.open .m-cta{opacity:1;transform:none;transition-delay:calc(var(--i,0)*55ms + 180ms)}
+.m-cta{margin-top:22px;opacity:0;transform:translateX(24px);transition:opacity .4s,transform .4s}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--nav-h) + 36px) 0 72px}
+.hero-grid{display:grid;gap:44px;align-items:center}
+@media(min-width:980px){.hero-grid{grid-template-columns:1.02fr .98fr}}
+.status{display:inline-flex;align-items:center;gap:12px;padding:.5em 1.1em;border:1px solid rgba(34,255,153,.3);background:rgba(34,255,153,.07);border-radius:999px;font-size:.8rem;font-family:var(--mono);color:#9bffd0}
+.dot{width:9px;height:9px;border-radius:50%;background:#22ff99;box-shadow:0 0 10px #22ff99;position:relative;flex:none}
+.dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:#22ff99;animation:ping 1.8s infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.8}100%{transform:scale(3.2);opacity:0}}
+.greet{margin:26px 0 12px;font-family:var(--mono);color:var(--muted);font-size:clamp(.95rem,2vw,1.15rem)}
+.greet b{color:var(--cyan);font-weight:700}
+.hero h1{font-family:var(--display);font-size:clamp(1.9rem,4.8vw,3.5rem);line-height:1.14;font-weight:900}
+.hero h1 .grad{background:linear-gradient(90deg,#2563FF,#00D9FF,#7aa2ff,#2563FF);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;animation:shift 8s linear infinite}
+@keyframes shift{to{background-position:250% 0}}
+.role{margin:20px 0 14px;font-family:var(--mono);font-size:clamp(.92rem,1.8vw,1.1rem);color:var(--muted);min-height:1.8em}
+.role .typed{color:var(--text)}
+.caret{display:inline-block;width:.6ch;height:1.1em;background:var(--cyan);vertical-align:-.2em;margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.desc{color:var(--muted);max-width:560px;font-size:1.04rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 28px}
+.socials{display:flex;gap:12px}
+.soc{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;border:1px solid var(--border);background:rgba(13,21,40,.55);color:var(--muted);transition:.25s;font-size:1.2rem}
+.soc:hover{color:var(--cyan);border-color:var(--cyan);box-shadow:0 0 22px rgba(0,217,255,.35);transform:translateY(-3px)}
+
+/* ---------- Terminal ---------- */
+.hero-term{max-width:660px;width:100%;justify-self:center}
+.term-wrap{position:relative;border-radius:18px;padding:1px;overflow:hidden;box-shadow:0 20px 80px rgba(37,99,255,.25),0 0 60px rgba(0,217,255,.08);transition:box-shadow .4s}
+.term-wrap.flash{box-shadow:0 0 0 2px var(--cyan),0 0 90px rgba(0,217,255,.55)}
+.term-wrap::before{content:"";position:absolute;inset:-60%;background:conic-gradient(from 0deg,transparent 0 62%,rgba(0,217,255,.9) 82%,transparent 100%);animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.term{position:relative;background:linear-gradient(160deg,#0A1226,#070C1C);border-radius:17px;overflow:hidden;font-family:var(--mono);font-size:.82rem}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--border);background:rgba(13,21,40,.8)}
+.term-bar i{width:11px;height:11px;border-radius:50%;display:block}
+.term-bar i:nth-child(1){background:#ff5f57}.term-bar i:nth-child(2){background:#febc2e}.term-bar i:nth-child(3){background:#28c840}
+.term-bar span{margin-left:10px;color:var(--muted);font-size:.76rem}
+.term-body{height:clamp(300px,44vh,400px);overflow-y:auto;padding:16px;scrollbar-width:thin}
+.term-line{white-space:pre-wrap;word-break:break-word;line-height:1.65;color:#cfe0ff}
+.term-line.cmd{color:var(--text)}
+.term-line .p{color:var(--cyan)}
+.term-line.err{color:#ff8aa0}
+.term-line.ok{color:#7dffb8}
+.term-line.dim{color:var(--muted)}
+.term-line a{color:var(--cyan);text-decoration:underline;text-underline-offset:3px}
+.term-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 12px}
+.term-chips button{font-family:var(--mono);font-size:.74rem;padding:.3em .8em;border-radius:999px;border:1px solid var(--border);color:var(--muted);transition:.2s}
+.term-chips button:hover{color:var(--cyan);border-color:var(--cyan);box-shadow:0 0 14px rgba(0,217,255,.3)}
+.term-input{display:flex;gap:8px;align-items:center;padding:12px 16px;border-top:1px solid var(--border);background:rgba(5,8,22,.65)}
+.term-input label{color:var(--cyan);white-space:nowrap}
+.term-input input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--text);font:inherit;caret-color:var(--cyan)}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;gap:36px}
+@media(min-width:960px){.about-grid{grid-template-columns:1.2fr .8fr;align-items:start}}
+.about-text p{color:var(--muted);margin-bottom:16px;font-size:1.04rem}
+.about-text strong{color:var(--text);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0}
+.stat{padding:18px 10px;text-align:center;border-radius:16px}
+.stat b{display:block;font-family:var(--display);font-size:clamp(1.3rem,3vw,1.9rem);color:var(--cyan);text-shadow:0 0 18px rgba(0,217,255,.45)}
+.stat span{font-size:.78rem;color:var(--muted)}
+.info-panel{padding:28px;border-radius:20px}
+.avatar{width:90px;height:90px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:1.7rem;background:radial-gradient(circle at 30% 30%,#13224a,#0A1020);border:1px solid rgba(0,217,255,.4);box-shadow:0 0 30px rgba(0,217,255,.25),inset 0 0 20px rgba(37,99,255,.3);margin-bottom:20px}
+.info-panel h3{font-family:var(--mono);font-size:.78rem;color:var(--cyan);letter-spacing:.16em;margin-bottom:10px;font-weight:500}
+.info-row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px dashed var(--border)}
+.info-row span:first-child{color:var(--muted);font-size:.88rem;flex:none}
+.info-row span:last-child{text-align:right;font-weight:500;font-size:.94rem}
+.info-panel .btn{width:100%;margin-top:24px}
+.btn-neon{background:transparent;border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 18px rgba(0,217,255,.25),inset 0 0 18px rgba(0,217,255,.08)}
+.btn-neon:hover{background:rgba(0,217,255,.12);color:#fff;box-shadow:0 0 34px rgba(0,217,255,.6),inset 0 0 22px rgba(0,217,255,.2);transform:translateY(-2px)}
+
+/* ---------- Skills ---------- */
+.skills-grid{display:grid;gap:24px}
+@media(min-width:900px){.skills-grid{grid-template-columns:repeat(3,1fr)}}
+.skill-card{padding:26px;border-radius:20px;display:flex;flex-direction:column;gap:20px}
+.skill-card header{display:flex;align-items:center;gap:14px}
+.skill-ico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(37,99,255,.16);border:1px solid var(--border);color:var(--cyan);font-size:1.3rem}
+.skill-card h3{font-size:1.1rem;line-height:1.25}
+.skill-card header small{display:block;color:var(--muted);font-size:.74rem;font-family:var(--mono)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.skill-chip{padding:.42em .85em;border-radius:10px;border:1px solid var(--border);background:rgba(10,16,32,.8);font-size:.84rem;color:var(--muted);transition:.2s}
+.skill-chip:hover,.skill-chip:focus-visible,.skill-chip.on{color:#fff;border-color:var(--cyan);background:rgba(0,217,255,.09);box-shadow:0 0 16px rgba(0,217,255,.45),inset 0 0 12px rgba(0,217,255,.12);transform:translateY(-2px)}
+.code-panel{margin-top:auto;border-radius:14px;background:#070C1C;border:1px solid var(--border);overflow:hidden}
+.code-head{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;font-family:var(--mono);font-size:.72rem;color:var(--muted);border-bottom:1px solid var(--border)}
+.code-head b{color:var(--cyan);font-weight:500}
+.lvl{height:3px;background:rgba(120,160,255,.14)}
+.lvl i{display:block;height:100%;width:0;background:var(--grad);box-shadow:0 0 10px var(--cyan);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.code-panel pre{padding:14px;font-family:var(--mono);font-size:.74rem;line-height:1.75;color:#cfe0ff;height:132px;overflow:auto;white-space:pre}
+.code-panel pre.flash{animation:codeIn .3s}
+@keyframes codeIn{from{opacity:.25;transform:translateY(4px)}to{opacity:1;transform:none}}
+.k{color:#7aa2ff}.s{color:#7dffb8}.n{color:#ffd277}.c{color:#5d6d93;font-style:italic}
+
+/* ---------- Projects ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.filter{padding:.55em 1.15em;border-radius:999px;border:1px solid var(--border);background:rgba(13,21,40,.6);color:var(--muted);font-size:.88rem;transition:.2s}
+.filter:hover{color:var(--text);border-color:rgba(0,217,255,.5)}
+.filter[aria-pressed="true"]{background:var(--grad);color:#021024;border-color:transparent;font-weight:600;box-shadow:0 0 24px rgba(0,217,255,.35)}
+.projects-grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr))}
+.project{border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.project.is-hidden{display:none}
+.project.pop{animation:pop .5s both}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(12px)}to{opacity:1;transform:none}}
+.project-vis{aspect-ratio:16/9;background:#07102a;border-bottom:1px solid var(--border);overflow:hidden}
+.project-vis svg{width:100%;height:100%;display:block;transition:transform .6s}
+.project:hover .project-vis svg{transform:scale(1.06)}
+.project-body{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.badge{align-self:flex-start;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(0,217,255,.3);padding:.25em .75em;border-radius:999px}
+.project h3{font-size:1.18rem;line-height:1.3}
+.project p{color:var(--muted);font-size:.92rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags li{font-family:var(--mono);font-size:.71rem;padding:.25em .6em;border-radius:6px;background:rgba(37,99,255,.14);color:#a9c1ff}
+.project-actions{margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;padding-top:8px}
+.linkbtn{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;color:var(--muted);padding:.35em 0;transition:color .2s}
+.linkbtn:hover{color:var(--cyan)}
+.project-actions .btn{flex-basis:100%;margin-top:6px}
+
+/* ---------- Dialogs ---------- */
+dialog{border:0;background:transparent;color:var(--text);padding:0;margin:0;inset:0;width:100%;height:100%;max-width:none;max-height:none;overflow:auto}
+dialog::backdrop{background:rgba(2,4,12,.8);backdrop-filter:blur(8px)}
+dialog[open]{display:grid;place-items:center;padding:20px;animation:fadeIn .25s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.dlg-panel{position:relative;width:min(860px,100%);max-height:calc(100dvh - 40px);overflow:auto;border-radius:22px;padding:clamp(22px,4vw,40px);background:linear-gradient(160deg,#0D1528,#080e20);border:1px solid rgba(0,217,255,.28);box-shadow:0 30px 120px rgba(0,0,0,.6),0 0 60px rgba(37,99,255,.2)}
+.dlg-close{position:absolute;top:14px;right:14px;z-index:3}
+.case h3{font-family:var(--display);font-size:clamp(1.25rem,3vw,1.75rem);margin:12px 0 8px;padding-right:48px;line-height:1.25}
+.case h4{font-family:var(--mono);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin:26px 0 10px;font-weight:500}
+.case p,.case li{color:var(--muted)}
+.case-meta{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin:20px 0 4px;padding:16px;border:1px solid var(--border);border-radius:14px;background:rgba(5,8,22,.5)}
+.case-meta small{display:block;font-family:var(--mono);font-size:.66rem;color:var(--muted);letter-spacing:.14em}
+.case-meta b{font-weight:600;font-size:.9rem}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.flow span{padding:.55em 1em;border-radius:12px;border:1px solid rgba(0,217,255,.35);background:rgba(0,217,255,.06);font-family:var(--mono);font-size:.78rem}
+.flow i{color:var(--cyan);font-style:normal}
+.check li{position:relative;padding-left:22px;margin:8px 0}
+.check li::before{content:"▹";position:absolute;left:0;color:var(--cyan)}
+.case-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* ---------- Process ---------- */
+.process-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.step{padding:28px;border-radius:20px;overflow:hidden}
+.step::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--grad);box-shadow:0 0 12px var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.step:hover::after{transform:scaleX(1)}
+.step .num{font-family:var(--display);font-size:2.6rem;font-weight:900;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h3{margin:14px 0 8px;font-size:1.1rem}
+.step p{color:var(--muted);font-size:.93rem}
+
+/* ---------- Timeline ---------- */
+.timeline{position:relative;max-width:860px;margin-inline:auto;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--cyan),var(--blue),transparent);box-shadow:0 0 12px rgba(0,217,255,.5)}
+.t-item{padding:24px 26px;border-radius:18px;margin-bottom:22px}
+.t-item::before{content:"";position:absolute;left:-34px;top:30px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan);box-shadow:0 0 16px var(--cyan)}
+.t-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px;font-family:var(--mono);font-size:.76rem}
+.t-type{padding:.2em .75em;border-radius:999px;border:1px solid rgba(0,217,255,.35);color:var(--cyan)}
+.t-type.edu{border-color:rgba(37,99,255,.7);color:#8fb0ff}
+.t-type.proj{border-color:rgba(154,168,199,.5);color:var(--muted)}
+.t-date{color:var(--muted)}
+.t-item h3{font-size:1.1rem}
+.t-org{color:#a9c1ff;font-size:.92rem;margin-bottom:8px}
+.t-item p{color:var(--muted);font-size:.93rem}
+
+/* ---------- Services ---------- */
+.services-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.service{padding:30px;border-radius:20px;display:flex;flex-direction:column;gap:12px}
+.s-ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(37,99,255,.3),rgba(0,217,255,.15));border:1px solid rgba(0,217,255,.3);color:var(--cyan);font-size:1.5rem;box-shadow:0 0 24px rgba(37,99,255,.25)}
+.service h3{font-size:1.08rem;line-height:1.35}
+.service p{color:var(--muted);font-size:.92rem}
+.more{margin-top:auto;padding-top:6px;color:var(--cyan);font-size:.88rem;display:inline-flex;gap:6px;align-items:center;transition:gap .2s}
+.more:hover{gap:12px}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;gap:32px}
+@media(min-width:960px){.contact-grid{grid-template-columns:.85fr 1.15fr;align-items:start}}
+.contact-info .lead{margin-bottom:26px}
+.c-list{display:grid;gap:12px}
+.c-row{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;transition:.2s}
+.c-row .ci{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:rgba(37,99,255,.16);color:var(--cyan);flex:none}
+.c-row small{display:block;color:var(--muted);font-size:.72rem;font-family:var(--mono)}
+.c-row span.v{font-size:.95rem;word-break:break-all}
+.c-row .grow{flex:1;min-width:0}
+.c-row .icon-btn{width:38px;height:38px}
+.form{padding:clamp(22px,4vw,36px);border-radius:22px;display:grid;gap:18px}
+.two{display:grid;gap:18px}
+@media(min-width:620px){.two{grid-template-columns:1fr 1fr}}
+.field{display:grid;gap:6px;border:0;min-width:0}
+.field label,.field legend{font-size:.82rem;color:var(--muted);font-family:var(--mono)}
+.field input[type=text],.field input[type=email],.field textarea{width:100%;background:rgba(5,8,22,.7);border:1px solid var(--border);border-radius:12px;padding:.85em 1em;color:var(--text);font:inherit;outline:0;transition:.2s}
+.field input:focus,.field textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,217,255,.14),0 0 20px rgba(0,217,255,.18)}
+.field textarea{min-height:140px;resize:vertical}
+.field.invalid input,.field.invalid textarea{border-color:#ff5a78}
+.err{color:#ff8aa0;font-size:.78rem;min-height:1.1em}
+.counter{justify-self:end;font-size:.72rem;color:var(--muted);font-family:var(--mono)}
+.budget{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.budget label{position:relative;font-family:var(--ff);font-size:inherit;color:inherit}
+.budget input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.budget span{display:inline-block;padding:.55em 1em;border-radius:12px;border:1px solid var(--border);font-size:.86rem;color:var(--muted);transition:.2s}
+.budget label:hover span{border-color:rgba(0,217,255,.5)}
+.budget input:checked+span{border-color:var(--cyan);color:#fff;background:rgba(0,217,255,.1);box-shadow:0 0 18px rgba(0,217,255,.3)}
+.budget input:focus-visible+span{outline:2px solid var(--cyan);outline-offset:2px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+/* ---------- Toasts ---------- */
+.toasts{position:fixed;right:20px;bottom:20px;z-index:2000;display:grid;gap:10px;max-width:min(380px,calc(100vw - 40px))}
+.toast{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:rgba(10,16,32,.96);border:1px solid var(--border);backdrop-filter:blur(12px);box-shadow:0 12px 40px rgba(0,0,0,.5);animation:toastIn .4s cubic-bezier(.2,.8,.2,1);font-size:.9rem}
+.toast.success{border-color:rgba(34,255,153,.5);box-shadow:0 0 30px rgba(34,255,153,.14),0 12px 40px rgba(0,0,0,.5)}
+.toast.error{border-color:rgba(255,90,120,.55)}
+.toast.info{border-color:rgba(0,217,255,.4)}
+.toast .t-ic{flex:none;font-weight:700}
+.toast.success .t-ic{color:#22ff99}.toast.error .t-ic{color:#ff5a78}.toast.info .t-ic{color:var(--cyan)}
+.toast.out{animation:toastOut .3s forwards}
+@keyframes toastIn{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes toastOut{to{opacity:0;transform:translateX(30px)}}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--border);background:rgba(5,8,22,.72);padding:40px 0}
+.foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.foot p{color:var(--muted);font-size:.9rem}
+.foot-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- Game ---------- */
+.game-panel{width:min(560px,100%);text-align:center;padding-top:clamp(22px,4vw,34px)}
+.game-hud{display:flex;justify-content:space-between;gap:8px;font-family:var(--mono);font-size:.74rem;color:var(--muted);margin:2px 0 12px;padding-right:46px;text-align:left}
+.game-hud b{color:var(--cyan);font-weight:700}
+#game{display:block;margin:0 auto;border-radius:14px;border:1px solid rgba(0,217,255,.35);background:#03050f;box-shadow:0 0 40px rgba(0,217,255,.18);width:min(100%,calc(min(60dvh,600px)*.75));height:auto;aspect-ratio:3/4;touch-action:none}
+.pad{display:flex;justify-content:center;gap:12px;margin-top:14px}
+.pad button{min-width:74px;height:52px;padding:0 16px;border-radius:14px;border:1px solid var(--border);background:rgba(13,21,40,.8);font-size:1rem;user-select:none;-webkit-user-select:none;touch-action:none;transition:.1s}
+.pad button.down{border-color:var(--cyan);box-shadow:0 0 18px rgba(0,217,255,.5);background:rgba(0,217,255,.14)}
+.game-help{font-size:.72rem;color:var(--muted);margin-top:12px;font-family:var(--mono);line-height:1.6}
+
+/* ---------- Responsive & a11y ---------- */
+@media(max-width:640px){
+  .term-body{height:290px}
+  .stats{gap:10px}
+  .t-item{padding:20px}
+  .toasts{right:12px;left:12px;bottom:12px;max-width:none}
+}
+@media(pointer:coarse){input,textarea{font-size:16px!important}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .term-wrap::before{animation:none}
+  .caret{animation:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Asosiy mazmunga o'tish</a>
+
+<!-- ============ SVG sprite ============ -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563FF"/><stop offset="1" stop-color="#00D9FF"/></linearGradient>
+    <radialGradient id="gOrb"><stop offset="0" stop-color="#00D9FF"/><stop offset=".55" stop-color="#2563FF" stop-opacity=".7"/><stop offset="1" stop-color="#2563FF" stop-opacity="0"/></radialGradient>
+  </defs>
+  <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 16 16"><path fill="currentColor" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></symbol>
+  <symbol id="i-telegram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4L3 11l6 2.2L11 20l3-4.5 5 3.5L21 4z"/><path d="M9 13.2L21 4"/></g></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></g></symbol>
+  <symbol id="i-sound-on" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"/></g></symbol>
+  <symbol id="i-sound-off" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l5 6M22 9l-5 6"/></g></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9l3 3-3 3M13 15h4"/></g></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></g></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h9"/></g></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></g></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></g></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></g></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></g></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></g></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></g></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></g></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/></g></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V4M9 13h.01M15 13h.01M9 16h6"/></g></symbol>
+</svg>
+
+<div class="progress" id="progress"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="orb orb-a"></div><div class="orb orb-b"></div>
+<div class="cursor-dot" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ============ ① NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#home" class="logo" aria-label="Azizbek Qulmurodov — bosh sahifa"><b>AQ</b><span class="slash">//</span><span class="lname">Azizbek Qulmurodov</span></a>
+    <nav class="nav-links" aria-label="Asosiy menyu">
+      <a href="#home" data-nav="home">Bosh sahifa</a>
+      <a href="#about" data-nav="about">Men haqimda</a>
+      <a href="#skills" data-nav="skills">Ko'nikmalar</a>
+      <a href="#projects" data-nav="projects">Loyihalar</a>
+      <a href="#experience" data-nav="experience">Tajriba</a>
+      <a href="#services" data-nav="services">Xizmatlar</a>
+      <a href="#contact" data-nav="contact">Aloqa</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn pulse-hint" id="soundBtn" type="button" aria-pressed="false" aria-label="Ovoz effektlari: o'chiq" title="Ovoz effektlari: o'chiq"><svg class="ic off" aria-hidden="true"><use href="#i-sound-off"/></svg><svg class="ic on" aria-hidden="true"><use href="#i-sound-on"/></svg></button>
+      <button class="icon-btn" id="termBtn" type="button" aria-label="Interaktiv terminalni ochish" title="Terminal"><svg class="ic" aria-hidden="true"><use href="#i-terminal"/></svg></button>
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta">Bog'lanish</a>
+      <button class="burger" id="burger" type="button" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mmenu" aria-hidden="true">
+  <a class="m-link" style="--i:0" href="#home"><span>Bosh sahifa</span><small>01</small></a>
+  <a class="m-link" style="--i:1" href="#about"><span>Men haqimda</span><small>02</small></a>
+  <a class="m-link" style="--i:2" href="#skills"><span>Ko'nikmalar</span><small>03</small></a>
+  <a class="m-link" style="--i:3" href="#projects"><span>Loyihalar</span><small>04</small></a>
+  <a class="m-link" style="--i:4" href="#experience"><span>Tajriba</span><small>05</small></a>
+  <a class="m-link" style="--i:5" href="#services"><span>Xizmatlar</span><small>06</small></a>
+  <a class="m-link" style="--i:6" href="#contact"><span>Aloqa</span><small>07</small></a>
+  <a class="btn btn-primary m-cta" style="--i:7" href="#contact">Bog'lanish</a>
+</div>
+
+<main id="main">
+
+<!-- ============ ② HERO ============ -->
+<section class="hero" id="home" aria-label="Bosh sahifa">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="status reveal"><span class="dot"></span>Yangi loyihalar va takliflar uchun ochiq</div>
+      <p class="greet reveal" style="--d:.08s">Assalomu alaykum! Men <b>Azizbek Qulmurodov</b></p>
+      <h1 class="reveal" style="--d:.16s">Kreativ G'oyalarni <span class="grad">Futuristik Raqamli Reallikka</span> Aylantiraman</h1>
+      <p class="role reveal" style="--d:.24s"><span class="sr">Senior Full-Stack &amp; Creative Frontend Developer</span><span aria-hidden="true">&gt; <span class="typed" id="typed"></span><span class="caret"></span></span></p>
+      <p class="desc reveal" style="--d:.3s">Zamonaviy veb-texnologiyalar, yuqori unumdorlik, mukammal UI/UX va animatsiyalar yordamida tezkor hamda esda qolarli raqamli loyihalarni barpo etaman.</p>
+      <div class="cta-row reveal" style="--d:.38s">
+        <a class="btn btn-primary" href="#projects">⚡ Loyihalarni Ko'rish</a>
+        <a class="btn btn-ghost" href="#contact">📩 Menga Yozing</a>
+      </div>
+      <ul class="socials reveal" style="--d:.46s">
+        <li><a class="soc" data-social="github" href="#contact" aria-label="GitHub"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+        <li><a class="soc" data-social="linkedin" href="#contact" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+        <li><a class="soc" data-social="telegram" href="#contact" aria-label="Telegram"><svg class="ic" aria-hidden="true"><use href="#i-telegram"/></svg></a></li>
+        <li><a class="soc" data-social="email" href="#contact" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+      </ul>
+    </div>
+
+    <div class="hero-term reveal" style="--d:.3s">
+      <div class="term-wrap" id="termWrap">
+        <div class="term" role="region" aria-label="Interaktiv terminal">
+          <div class="term-bar"><i></i><i></i><i></i><span>azizbek@portfolio — bash</span></div>
+          <div class="term-body" id="termBody" role="log" aria-live="polite" tabindex="0"></div>
+          <div class="term-chips" id="termChips"></div>
+          <form class="term-input" id="termForm" autocomplete="off">
+            <label for="termInput">visitor@aq:~$</label>
+            <input id="termInput" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="buyruq yozing… (help)">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ③ ABOUT ============ -->
+<section id="about" aria-labelledby="about-t">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">01 // Men haqimda</span>
+      <h2 class="title" id="about-t">Azizbek Bilan <span class="grad">Tanishing</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="reveal">Dasturlashga bo'lgan ishtiyoqim bitta oddiy savoldan boshlangan: <strong>«Bu sayt qanday ishlaydi?»</strong> Shu qiziquvchanlik meni oddiy HTML sahifalardan zamonaviy full-stack tizimlar, real vaqt rejimida ishlaydigan ilovalar va kinematografik animatsiyalargacha olib keldi.</p>
+        <p class="reveal" style="--d:.08s">Men uchun yaxshi kod — shunchaki ishlaydigan kod emas. U <strong>toza, o'qilishi oson, tez va kengaytirishga tayyor</strong> bo'lishi kerak. Har bir piksel, har bir millisekund va har bir funksiya foydalanuvchi tajribasiga ta'sir qilishini yaxshi bilaman.</p>
+        <p class="reveal" style="--d:.16s">Frontendda kreativlik va harakat bilan, backendda esa ishonchlilik va xavfsizlik bilan ishlashni yaxshi ko'raman. Maqsadim — g'oyani nafaqat chiroyli, balki barqaror va tez ishlaydigan mahsulotga aylantirish.</p>
+        <!-- NAMUNA raqamlar: o'zingizniki bilan almashtiring (data-count) -->
+        <div class="stats reveal" style="--d:.2s">
+          <div class="stat glass" data-spot><b data-count="4" data-suffix="+">0</b><span>Yil tajriba</span></div>
+          <div class="stat glass" data-spot><b data-count="30" data-suffix="+">0</b><span>Loyihalar</span></div>
+          <div class="stat glass" data-spot><b data-count="20" data-suffix="+">0</b><span>Texnologiyalar</span></div>
+        </div>
+      </div>
+      <aside class="info-panel glass reveal" data-spot style="--d:.12s" aria-label="Shaxsiy ma'lumotlar">
+        <div class="avatar" aria-hidden="true">AQ</div>
+        <h3>// MA'LUMOTLAR PANELI</h3>
+        <div class="info-row"><span>Ism</span><span>Azizbek Qulmurodov Azamat o'g'li</span></div>
+        <div class="info-row"><span>Mutaxassislik</span><span>Senior Full-Stack / Creative Developer</span></div>
+        <div class="info-row"><span>Joylashuv</span><span>O'zbekiston</span></div>
+        <div class="info-row"><span>Tajriba</span><span>4+ Yil</span></div>
+        <div class="info-row"><span>Holat</span><span style="color:#9bffd0">● Loyihalar uchun ochiq</span></div>
+        <button class="btn btn-neon" id="cvBtn" type="button"><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>Rezyumeni Yuklab Olish (CV)</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ④ SKILLS ============ -->
+<section id="skills" aria-labelledby="skills-t">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">02 // Texnik ko'nikmalar</span>
+      <h2 class="title" id="skills-t">Texnologiyalar <span class="grad">Matritsasi</span></h2>
+      <p class="lead">Ko'nikma ustiga kelib (yoki bosib) uning kod namunasini ko'ring.</p>
+    </div>
+    <div class="skills-grid" id="skillsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ ⑤ PROJECTS ============ -->
+<section id="projects" aria-labelledby="proj-t">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">03 // Loyihalar</span>
+      <h2 class="title" id="proj-t">Tanlangan Loyihalar va <span class="grad">Case Study</span>'lar</h2>
+      <p class="lead">Filtrlardan foydalaning va har bir loyihaning batafsil case study'sini oching.</p>
+    </div>
+    <div class="filters reveal" id="filters" role="group" aria-label="Loyiha filtrlari"></div>
+    <div class="projects-grid" id="projectsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ ⑥ PROCESS ============ -->
+<section id="process" aria-labelledby="proc-t">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">04 // Ishlash bosqichlari</span>
+      <h2 class="title" id="proc-t">G'oyadan <span class="grad">Ishga Tushirishgacha</span></h2>
+    </div>
+    <div class="process-grid">
+      <article class="step glass tilt reveal" data-spot><div class="num">01</div><h3>Tahlil va G'oya</h3><p>Masalani chuqur o'rganish va arxitekturani rejalashtirish.</p></article>
+      <article class="step glass tilt reveal" data-spot style="--d:.08s"><div class="num">02</div><h3>UI/UX va Prototip</h3><p>Futuristik va qulay interfeys dizaynini yaratish.</p></article>
+      <article class="step glass tilt reveal" data-spot style="--d:.16s"><div class="num">03</div><h3>Dasturlash va Animatsiya</h3><p>Toza, tezkor va xavfsiz kod yozish.</p></article>
+      <article class="step glass tilt reveal" data-spot style="--d:.24s"><div class="num">04</div><h3>Test va Optimallashtirish</h3><p>Yuqori tezlik, SEO va xavfsizlikni ta'minlab ishga tushirish.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ⑦ TIMELINE ============ -->
+<!-- NAMUNA ma'lumotlar: o'z ish joylaringiz va ta'limingiz bilan almashtiring -->
+<section id="experience" aria-labelledby="exp-t">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">05 // Tajriba va ta'lim</span>
+      <h2 class="title" id="exp-t">Yo'limning <span class="grad">Xronologiyasi</span></h2>
+    </div>
+    <div class="timeline">
+      <article class="t-item glass reveal" data-spot>
+        <div class="t-meta"><span class="t-type">Ish</span><span class="t-date">2025 — Hozir</span></div>
+        <h3>Senior Full-Stack &amp; Creative Frontend Developer</h3>
+        <div class="t-org">Mustaqil (Freelance) va masofaviy jamoalar</div>
+        <p>SaaS, e-commerce va Telegram WebApp loyihalarini boshidan oxirigacha yetkazib berish; arxitektura, kod sifati va unumdorlik uchun to'liq mas'uliyat.</p>
+      </article>
+      <article class="t-item glass reveal" data-spot>
+        <div class="t-meta"><span class="t-type proj">Loyiha</span><span class="t-date">2024 — 2025</span></div>
+        <h3>Shaxsiy tajriba loyihalari va open-source</h3>
+        <div class="t-org">NovaBoard · Aurora UI Lab · Pixel Raid</div>
+        <p>Canvas/WebGL, real vaqt va animatsiya yo'nalishlarida eksperimentlar; yangi texnologiyalarni amalda sinab ko'rish.</p>
+      </article>
+      <article class="t-item glass reveal" data-spot>
+        <div class="t-meta"><span class="t-type">Ish</span><span class="t-date">2022 — 2024</span></div>
+        <h3>Frontend Developer</h3>
+        <div class="t-org">Veb-studiya (kompaniya nomini kiriting)</div>
+        <p>React va Next.js asosida korporativ saytlar va boshqaruv panellari; dizaynerlar bilan hamkorlikda UI kutubxonasini yaratish.</p>
+      </article>
+      <article class="t-item glass reveal" data-spot>
+        <div class="t-meta"><span class="t-type edu">Ta'lim</span><span class="t-date">2020 — 2024</span></div>
+        <h3>Axborot texnologiyalari yo'nalishi</h3>
+        <div class="t-org">Oliy ta'lim muassasasi (nomini kiriting)</div>
+        <p>Algoritmlar, ma'lumotlar bazalari va dasturiy ta'minot muhandisligi asoslari.</p>
+      </article>
+      <article class="t-item glass reveal" data-spot>
+        <div class="t-meta"><span class="t-type edu">Ta'lim</span><span class="t-date">2021 — 2022</span></div>
+        <h3>Full-Stack kurslari va mustaqil o'rganish</h3>
+        <div class="t-org">Onlayn kurslar va amaliy loyihalar</div>
+        <p>JavaScript, Node.js va ma'lumotlar bazalari bo'yicha chuqur amaliy tayyorgarlik.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ⑧ SERVICES ============ -->
+<section id="services" aria-labelledby="srv-t">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">06 // Xizmatlarim</span>
+      <h2 class="title" id="srv-t">Men Nima <span class="grad">Qila Olaman</span></h2>
+    </div>
+    <div class="services-grid">
+      <article class="service glass tilt reveal" data-spot>
+        <div class="s-ico"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></div>
+        <h3>Mukammal Web-saytlar va Ilovalar Yaratish</h3>
+        <p>G'oyadan tayyor mahsulotgacha: landing sahifalar, korporativ saytlar, SaaS va to'liq funksional veb-ilovalar.</p>
+        <a class="more" href="#contact" data-subject="Web-sayt yoki ilova yaratish">Buyurtma berish <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="service glass tilt reveal" data-spot style="--d:.08s">
+        <div class="s-ico"><svg class="ic" aria-hidden="true"><use href="#i-layout"/></svg></div>
+        <h3>Frontend va UI/UX Interfeyslar Ishlab Chiqish</h3>
+        <p>Dizaynni piksel-aniqlikda, silliq animatsiyalar va moslashuvchan (responsive) interfeysga aylantiraman.</p>
+        <a class="more" href="#contact" data-subject="Frontend va UI/UX ishlab chiqish">Buyurtma berish <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="service glass tilt reveal" data-spot style="--d:.16s">
+        <div class="s-ico"><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg></div>
+        <h3>Veb-saytlar Tezligi va SEO Optimallashtirish</h3>
+        <p>Core Web Vitals, kod bo'lish, keshlash va semantik markup orqali saytingizni tezlashtiraman va qidiruvda ko'rinadigan qilaman.</p>
+        <a class="more" href="#contact" data-subject="Tezlik va SEO optimallashtirish">Buyurtma berish <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="service glass tilt reveal" data-spot style="--d:.24s">
+        <div class="s-ico"><svg class="ic" aria-hidden="true"><use href="#i-bot"/></svg></div>
+        <h3>Telegram Botlar va WebApp Integratsiyasi</h3>
+        <p>Buyurtma, to'lov va mijozlar bilan ishlashni avtomatlashtiruvchi botlar hamda Telegram Mini App'lar.</p>
+        <a class="more" href="#contact" data-subject="Telegram bot / WebApp">Buyurtma berish <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ⑨ CONTACT ============ -->
+<section id="contact" aria-labelledby="con-t">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">07 // Aloqa</span>
+      <h2 class="title" id="con-t">Birgalikda Ajoyib Loyiha <span class="grad">Barpo Etaylik!</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p class="lead">Loyihangiz haqida yozing — g'oyani birgalikda mukammal raqamli mahsulotga aylantiramiz.</p>
+        <div class="c-list">
+          <div class="c-row glass" data-spot>
+            <span class="ci"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></span>
+            <div class="grow"><small>EMAIL</small><span class="v" data-email></span></div>
+            <button class="icon-btn" id="copyEmail" type="button" aria-label="Email'ni nusxalash" title="Email'ni nusxalash"><svg class="ic" aria-hidden="true"><use href="#i-copy"/></svg></button>
+          </div>
+          <a class="c-row glass" data-spot data-social="telegram" href="#contact" target="_blank" rel="noopener noreferrer"><span class="ci"><svg class="ic" aria-hidden="true"><use href="#i-telegram"/></svg></span><div class="grow"><small>TELEGRAM</small><span class="v">Telegram'da yozing</span></div><svg class="ic" aria-hidden="true"><use href="#i-external"/></svg></a>
+          <a class="c-row glass" data-spot data-social="github" href="#contact" target="_blank" rel="noopener noreferrer"><span class="ci"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg></span><div class="grow"><small>GITHUB</small><span class="v">Kodlarimni ko'ring</span></div><svg class="ic" aria-hidden="true"><use href="#i-external"/></svg></a>
+          <a class="c-row glass" data-spot data-social="linkedin" href="#contact" target="_blank" rel="noopener noreferrer"><span class="ci"><svg class="ic" aria-hidden="true"><use href="#i-linkedin"/></svg></span><div class="grow"><small>LINKEDIN</small><span class="v">Professional profil</span></div><svg class="ic" aria-hidden="true"><use href="#i-external"/></svg></a>
+        </div>
+      </div>
+
+      <form class="form glass reveal" id="contactForm" novalidate style="--d:.1s" aria-label="Aloqa formasi">
+        <div class="two">
+          <div class="field"><label for="name">Ismingiz</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Ism Familiya" aria-describedby="name-e"><span class="err" id="name-e" aria-live="polite"></span></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="siz@example.com" aria-describedby="email-e"><span class="err" id="email-e" aria-live="polite"></span></div>
+        </div>
+        <div class="field"><label for="subject">Mavzu</label><input id="subject" name="subject" type="text" placeholder="Loyiha haqida" aria-describedby="subject-e"><span class="err" id="subject-e" aria-live="polite"></span></div>
+        <div class="field"><label for="message">Xabar</label><textarea id="message" name="message" maxlength="1000" placeholder="Loyihangiz, maqsadlaringiz va muddatlar haqida yozing…" aria-describedby="message-e"></textarea><div style="display:flex;justify-content:space-between;gap:10px"><span class="err" id="message-e" aria-live="polite"></span><span class="counter" id="msgCount">0/1000</span></div></div>
+        <fieldset class="field">
+          <legend>Loyiha byudjeti</legend>
+          <div class="budget">
+            <label><input type="radio" name="budget" value="$500 gacha"><span>$500 gacha</span></label>
+            <label><input type="radio" name="budget" value="$500 – $1 500"><span>$500 – $1 500</span></label>
+            <label><input type="radio" name="budget" value="$1 500 – $5 000"><span>$1 500 – $5 000</span></label>
+            <label><input type="radio" name="budget" value="$5 000+"><span>$5 000+</span></label>
+            <label><input type="radio" name="budget" value="Hali aniq emas" checked><span>Hali aniq emas</span></label>
+          </div>
+        </fieldset>
+        <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-primary" id="sendBtn" type="submit"><svg class="ic" aria-hidden="true"><use href="#i-telegram"/></svg><span>Xabarni Yuborish</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ ⑩ FOOTER ============ -->
+<footer>
+  <div class="container foot">
+    <p>© 2026 Azizbek Qulmurodov. Barcha huquqlar tutilgan.</p>
+    <div class="foot-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-game>🕹️ Kiber O'yinni O'ynash</button>
+      <button class="btn btn-ghost btn-sm" type="button" id="toTop">↑ Yuqoriga</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ Dialogs ============ -->
+<dialog id="caseDlg" aria-labelledby="caseTitle">
+  <div class="dlg-panel case">
+    <button class="icon-btn dlg-close" type="button" data-close aria-label="Yopish"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div id="caseBody"></div>
+  </div>
+</dialog>
+
+<dialog id="gameDlg" aria-label="Cyber Arcade o'yini">
+  <div class="dlg-panel game-panel">
+    <button class="icon-btn dlg-close" type="button" data-close aria-label="O'yinni yopish"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="game-hud"><span>BALL <b id="gScore">0</b></span><span>JON <b id="gLives">♥♥♥</b></span><span>DARAJA <b id="gLevel">1</b></span><span>REKORD <b id="gHi">0</b></span></div>
+    <canvas id="game" width="480" height="640" aria-label="Cyber Arcade o'yin maydoni"></canvas>
+    <div class="pad">
+      <button type="button" data-k="left" aria-label="Chapga">◀</button>
+      <button type="button" data-k="fire" aria-label="Otish">OTISH</button>
+      <button type="button" data-k="right" aria-label="O'ngga">▶</button>
+    </div>
+    <p class="game-help">← → yoki A D — harakat · Space — otish · Enter — boshlash · P — pauza · Esc — yopish</p>
+  </div>
+</dialog>
+
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+'use strict';
+
+/* =========================================================
+   ⚙️  SOZLAMALAR — o'zingizga moslang
+   ========================================================= */
+const CONFIG = {
+  name: 'Azizbek Qulmurodov',
+  fullName: "Azizbek Qulmurodov Azamat o'g'li",
+  email: 'azizbek.qulmurodov@example.com',
+  telegram: 'https://t.me/USERNAME',
+  github: 'https://github.com/USERNAME',
+  linkedin: 'https://www.linkedin.com/in/USERNAME',
+  cvUrl: '',        // Tayyor CV (PDF) havolasi. Bo'sh bo'lsa — matnli CV avtomatik yaratiladi.
+  formEndpoint: ''  // Formspree / Getform kabi endpoint. Bo'sh bo'lsa — pochta ilovasi (mailto) ochiladi.
+};
+
+/* =========================================================
+   Yordamchilar
+   ========================================================= */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)');
+const FINE = matchMedia('(hover: hover) and (pointer: fine)');
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+};
+const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+const App = {};
+
+function toast(msg, type = 'info', ms = 4200) {
+  const box = $('#toasts');
+  while (box.children.length >= 3) box.firstChild.remove();
+  const el = document.createElement('div');
+  el.className = 'toast ' + type;
+  const ic = document.createElement('span');
+  ic.className = 't-ic'; ic.setAttribute('aria-hidden', 'true');
+  ic.textContent = { success: '✔', error: '⚠', info: 'ℹ' }[type] || 'ℹ';
+  const tx = document.createElement('span'); tx.textContent = msg;
+  el.append(ic, tx); box.appendChild(el);
+  setTimeout(() => { el.classList.add('out'); setTimeout(() => el.remove(), 320); }, ms);
+}
+
+/* =========================================================
+   🔊 CYBER SOUND ENGINE (Web Audio API)
+   ========================================================= */
+const SFX = (() => {
+  const AC = window.AudioContext || window.webkitAudioContext;
+  let ctx = null, master = null, on = store.get('aq-sound') === '1', last = 0;
+  function ready() {
+    if (!AC) return false;
+    if (!ctx) {
+      if (navigator.userActivation && !navigator.userActivation.hasBeenActive) return false;
+      ctx = new AC();
+      master = ctx.createGain(); master.gain.value = .55;
+      const comp = ctx.createDynamicsCompressor();
+      master.connect(comp); comp.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume().catch(() => {});
+    return true;
+  }
+  function tone({ f = 440, to = null, t = .1, type = 'sine', v = .1, d = 0 }) {
+    const now = ctx.currentTime + d, o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = type; o.frequency.setValueAtTime(f, now);
+    if (to) o.frequency.exponentialRampToValueAtTime(Math.max(to, 1), now + t);
+    g.gain.setValueAtTime(.0001, now);
+    g.gain.exponentialRampToValueAtTime(v, now + .008);
+    g.gain.exponentialRampToValueAtTime(.0001, now + t);
+    o.connect(g); g.connect(master); o.start(now); o.stop(now + t + .03);
+  }
+  function noise({ t = .25, v = .15, f = 1800, d = 0 }) {
+    const n = Math.floor(ctx.sampleRate * t), buf = ctx.createBuffer(1, n, ctx.sampleRate), data = buf.getChannelData(0);
+    for (let i = 0; i < n; i++) data[i] = (Math.random() * 2 - 1) * (1 - i / n);
+    const s = ctx.createBufferSource(); s.buffer = buf;
+    const flt = ctx.createBiquadFilter(); flt.type = 'lowpass'; flt.frequency.value = f;
+    const g = ctx.createGain(), now = ctx.currentTime + d;
+    g.gain.setValueAtTime(v, now); g.gain.exponentialRampToValueAtTime(.0001, now + t);
+    s.connect(flt); flt.connect(g); g.connect(master); s.start(now);
+  }
+  const lib = {
+    hover() { tone({ f: 1100, to: 1650, t: .05, v: .035 }); },
+    click() { tone({ f: 420, to: 180, t: .1, type: 'square', v: .05 }); tone({ f: 1320, t: .06, v: .04, d: .03 }); },
+    key() { tone({ f: 1500 + Math.random() * 500, t: .022, type: 'square', v: .02 }); },
+    open() { tone({ f: 300, to: 1200, t: .22, type: 'sawtooth', v: .045 }); tone({ f: 600, to: 2400, t: .22, v: .03, d: .04 }); },
+    close() { tone({ f: 1200, to: 260, t: .2, type: 'sawtooth', v: .045 }); },
+    success() { [523, 659, 784, 1047].forEach((f, i) => tone({ f, t: .14, type: 'triangle', v: .07, d: i * .08 })); },
+    error() { tone({ f: 200, to: 120, t: .22, type: 'sawtooth', v: .08 }); tone({ f: 160, to: 90, t: .25, type: 'sawtooth', v: .08, d: .12 }); },
+    on() { [440, 660, 880].forEach((f, i) => tone({ f, t: .1, type: 'triangle', v: .07, d: i * .06 })); },
+    shoot() { tone({ f: 980, to: 220, t: .13, type: 'square', v: .045 }); },
+    boom() { noise({ t: .3, v: .18, f: 1400 }); tone({ f: 140, to: 40, t: .3, type: 'sawtooth', v: .09 }); },
+    hurt() { noise({ t: .4, v: .22, f: 900 }); tone({ f: 220, to: 50, t: .4, type: 'sawtooth', v: .1 }); },
+    win() { [392, 523, 659, 784, 1047].forEach((f, i) => tone({ f, t: .16, type: 'square', v: .05, d: i * .09 })); },
+    lose() { [392, 330, 262, 196].forEach((f, i) => tone({ f, t: .28, type: 'sawtooth', v: .07, d: i * .18 })); }
+  };
+  return {
+    get on() { return on; },
+    setEnabled(v) { on = !!v; store.set('aq-sound', on ? '1' : '0'); if (on && ready()) lib.on(); },
+    play(n) {
+      if (!on || !ready()) return;
+      if (n === 'hover') { const now = performance.now(); if (now - last < 70) return; last = now; }
+      try { lib[n] && lib[n](); } catch (e) {}
+    },
+    unlock() { if (on) ready(); }
+  };
+})();
+
+/* =========================================================
+   Ma'lumotlar: Ko'nikmalar
+   ========================================================= */
+const SKILLS = [
+  { title: 'Frontend', sub: 'interfeys va harakat', icon: 'i-layout', items: [
+    { n: 'React', l: 95, f: 'Counter.jsx', c: `function Counter() {\n  const [n, setN] = useState(0);\n  return <button onClick={() => setN(n + 1)}>{n}</button>;\n}` },
+    { n: 'Next.js', l: 92, f: 'app/page.tsx', c: `export default async function Page() {\n  const data = await getProjects();\n  return <Projects items={data} />;\n}` },
+    { n: 'TypeScript', l: 90, f: 'types.ts', c: `type Project = {\n  id: number;\n  title: string;\n  tags: readonly string[];\n};` },
+    { n: 'Vue.js', l: 80, f: 'Card.vue', c: `const open = ref(false);\nconst toggle = () => (open.value = !open.value);\n// reaktiv holat — Composition API` },
+    { n: 'Tailwind CSS', l: 94, f: 'index.html', c: `<div class="grid gap-6 md:grid-cols-3\n  bg-slate-900/60 backdrop-blur">` },
+    { n: 'HTML5/CSS3', l: 98, f: 'glass.css', c: `.glass {\n  backdrop-filter: blur(14px);\n  border: 1px solid rgba(120,160,255,.18);\n}` },
+    { n: 'JavaScript (ES6+)', l: 96, f: 'utils.js', c: `const debounce = (fn, ms = 200) => {\n  let t;\n  return (...a) => (clearTimeout(t), t = setTimeout(() => fn(...a), ms));\n};` },
+    { n: 'HTML Canvas/WebGL', l: 85, f: 'canvas.js', c: `const ctx = canvas.getContext('2d');\nrequestAnimationFrame(function loop() {\n  draw(ctx);\n  requestAnimationFrame(loop);\n});` }
+  ]},
+  { title: 'Backend & Database', sub: 'server va ma\'lumotlar', icon: 'i-server', items: [
+    { n: 'Node.js', l: 93, f: 'server.js', c: `import http from 'node:http';\nhttp.createServer((req, res) => res.end('OK'))\n  .listen(3000);` },
+    { n: 'Express', l: 92, f: 'app.js', c: `app.get('/api/projects', async (req, res) => {\n  res.json(await Project.find());\n});` },
+    { n: 'REST APIs', l: 94, f: 'routes.http', c: `GET    /api/v1/projects\nPOST   /api/v1/projects\nDELETE /api/v1/projects/:id` },
+    { n: 'GraphQL', l: 82, f: 'schema.graphql', c: `type Query {\n  projects(tag: String): [Project!]!\n}` },
+    { n: 'PostgreSQL', l: 88, f: 'query.sql', c: `SELECT title, COUNT(*) AS views\nFROM visits GROUP BY title\nORDER BY views DESC LIMIT 5;` },
+    { n: 'MongoDB', l: 86, f: 'aggregate.js', c: `db.orders.aggregate([\n  { $match: { status: 'paid' } },\n  { $group: { _id: '$user', sum: { $sum: '$total' } } }\n]);` },
+    { n: 'Firebase', l: 80, f: 'firebase.js', c: `onSnapshot(doc(db, 'rooms', id), (snap) => {\n  setRoom(snap.data());\n});` }
+  ]},
+  { title: 'Asboblar & Boshqalar', sub: 'workflow va deploy', icon: 'i-sliders', items: [
+    { n: 'Git', l: 94, f: 'terminal', c: `git switch -c feat/neon-ui\ngit commit -m "feat: add neon cards"\ngit push -u origin feat/neon-ui` },
+    { n: 'GitHub', l: 92, f: '.github/ci.yml', c: `on: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest` },
+    { n: 'Docker', l: 82, f: 'Dockerfile', c: `FROM node:20-alpine\nCOPY . /app\nCMD ["node", "server.js"]` },
+    { n: 'Figma', l: 85, f: 'tokens.json', c: `{ "color.primary": "#2563FF",\n  "color.accent":  "#00D9FF" }` },
+    { n: 'Vite', l: 93, f: 'vite.config.js', c: `export default defineConfig({\n  plugins: [react()],\n});` },
+    { n: 'Webpack', l: 78, f: 'webpack.config.js', c: `module.exports = {\n  mode: 'production',\n  entry: './src/index.js',\n};` },
+    { n: 'Vercel', l: 92, f: 'vercel.json', c: `{ "framework": "nextjs",\n  "regions": ["fra1"] }` }
+  ]}
+];
+
+/* =========================================================
+   Ma'lumotlar: Loyihalar  (NAMUNA — o'zingizniki bilan almashtiring;
+   demo / repo ga haqiqiy URL yozing, '#' qolsa tugma xabar chiqaradi)
+   ========================================================= */
+const CATS = { web: 'Web Ilova', ecom: 'E-Commerce', ui: 'UI/UX Tajriba', game: "Mini O'yin" };
+const PROJECTS = [
+  { id: 1, cat: 'web', vis: 'dashboard', title: 'NovaBoard — SaaS Dashboard',
+    short: "Jamoalar uchun real vaqtli analitika, hisobotlar va rollarga asoslangan boshqaruv paneli.",
+    tags: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'], demo: '#', repo: '#',
+    case: { role: 'Full-Stack dasturchi', time: '3 oy',
+      goal: "Tarqoq hisobotlarni bitta tezkor panelga jamlash: real vaqtli grafiklar, filtrlar va foydalanuvchi rollari.",
+      flow: ['React + TypeScript', 'Express REST API', 'PostgreSQL', 'WebSocket oqimi'],
+      work: ["Komponentlar kutubxonasi va dizayn tokenlari yaratildi", "Katta jadvallar uchun virtual scroll va keshlash", "JWT va rollarga asoslangan ruxsatlar (RBAC)", "Grafiklar uchun yengil Canvas vizualizatsiya"],
+      result: ["Kod bo'lish va lazy-loading hisobiga boshlang'ich yuklanish tezlashdi", "Jamoa hisobotlarni qo'lda tayyorlash o'rniga bir bosishda oladi"] } },
+  { id: 2, cat: 'web', vis: 'ai', title: 'NeuralDesk — AI Platforma',
+    short: "Hujjatlar bilan suhbatlashish va avtomatik xulosa chiqarish imkonini beruvchi AI yordamchi.",
+    tags: ['Next.js', 'TypeScript', 'LLM API', 'Redis'], demo: '#', repo: '#',
+    case: { role: 'Full-Stack dasturchi', time: '2 oy',
+      goal: "Foydalanuvchi yuklagan hujjatlar asosida savollarga javob beruvchi, tez va qulay AI interfeysi.",
+      flow: ['Next.js (SSR)', 'Edge API routes', 'LLM provayder', 'Redis kesh'],
+      work: ["Streaming javoblar bilan chat interfeysi", "Fayl yuklash va matnni ajratib olish quvuri", "Prompt shablonlarini boshqarish", "So'rov limiti va keshlash"],
+      result: ["Javob birinchi so'zdanoq oqim bilan ko'rinadi", "Takroriy so'rovlar keshdan tez qaytadi"] } },
+  { id: 3, cat: 'ecom', vis: 'shop', title: 'Orbit Market — E-Commerce',
+    short: "Katalog, savat va Payme/Click to'lovlari bilan to'liq onlayn do'kon.",
+    tags: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS'], demo: '#', repo: '#',
+    case: { role: 'Full-Stack dasturchi', time: '4 oy',
+      goal: "SEO'ga tayyor, tez va qulay onlayn do'kon: mahsulotlar katalogi, savat, buyurtmalar va to'lov.",
+      flow: ['Next.js storefront', 'Node.js API', 'MongoDB', 'Payme / Click'],
+      work: ["SEO uchun SSG/ISR sahifalar", "Savat va buyurtma holatlari mantig'i", "To'lov webhook'lari va tekshiruvlar", "Mahsulotlarni boshqarish uchun admin panel"],
+      result: ["Katalog sahifalari statik keshdan tez ochiladi", "To'lov jarayoni to'liq avtomatlashtirildi"] } },
+  { id: 4, cat: 'ui', vis: 'ui', title: 'Aurora UI Lab — Interfeys Eksperimentlari',
+    short: "WebGL va Canvas asosidagi interaktiv interfeys eksperimentlari to'plami.",
+    tags: ['WebGL', 'Canvas', 'JavaScript', 'Vite'], demo: '#', repo: '#',
+    case: { role: 'Creative Developer', time: 'Davomli',
+      goal: "Brauzerda interfeys harakati va vizual effektlarning chegarasini sinab ko'rish.",
+      flow: ['Vite', 'Render loop (rAF)', 'Pointer / scroll kirishi', 'GPU shaderlar'],
+      work: ["Zarrachalar tizimi va interaktiv fon", "Fragment shader effektlari", "Scroll bilan boshqariladigan animatsiyalar", "prefers-reduced-motion qo'llab-quvvatlash"],
+      result: ["Eksperimentlar yengil va 60 FPS ga yaqin ishlashga optimallashtirilgan", "Ayrim g'oyalar real loyihalarda qo'llanildi"] } },
+  { id: 5, cat: 'game', vis: 'game', title: "Pixel Raid — Retro Arcade",
+    short: "Brauzerda ishlaydigan retro kosmik o'yin: Web Audio ovozlari va mobil boshqaruv bilan.",
+    tags: ['JavaScript', 'Canvas', 'Web Audio'], demo: '#', repo: '#',
+    case: { role: 'Game / Frontend dasturchi', time: '2 hafta',
+      goal: "Kutubxonalarsiz, sof JavaScript bilan yengil va qiziqarli arcade o'yini yaratish.",
+      flow: ['Game loop (rAF)', 'Canvas render', 'Input manager', 'Web Audio SFX'],
+      work: ["Doimiy vaqt qadamli o'yin sikli", "To'qnashuvlar va zarrachalar effekti", "Klaviatura va sensorli boshqaruv", "Sintezlangan ovoz effektlari"],
+      result: ["Hech qanday tashqi kutubxonasiz, bitta faylda ishlaydi", "Shu saytning pastki qismidagi o'yin — uning soddalashtirilgan versiyasi"] } },
+  { id: 6, cat: 'web', vis: 'bot', title: 'BotHub — Telegram WebApp',
+    short: "Telegram bot va WebApp: buyurtmalar, to'lovlar va mijozlar bilan aloqani avtomatlashtirish.",
+    tags: ['Node.js', 'Telegram WebApp', 'MongoDB', 'Express'], demo: '#', repo: '#',
+    case: { role: 'Full-Stack dasturchi', time: '6 hafta',
+      goal: "Mijozlar buyurtma berishi va to'lashi mumkin bo'lgan Telegram ichidagi to'liq xizmat.",
+      flow: ['Telegram Bot API', 'Express webhook', 'MongoDB', 'WebApp (React)'],
+      work: ["Bot buyruqlari va inline klaviaturalar", "Telegram WebApp interfeysi va initData tekshiruvi", "Buyurtmalar va bildirishnomalar tizimi", "Operatorlar uchun boshqaruv paneli"],
+      result: ["Qo'lda qabul qilinadigan buyurtmalar avtomatlashtirildi", "Mijoz Telegram'dan chiqmay xizmatdan foydalanadi"] } }
+];
+const FILTERS = [['all', 'Barchasi'], ['web', 'Web Ilovalar'], ['ecom', 'E-Commerce'], ['ui', 'UI/UX Tajribalar'], ['game', "Mini O'yinlar"]];
+
+/* Piksel sprite'lar (o'yin va loyiha vizualida) */
+const SPR_A = ['01000010', '00100100', '01111110', '11011011', '11111111', '10111101', '10100101', '00100100'];
+const SPR_B = ['00011000', '00111100', '01111110', '11011011', '11111111', '00100100', '01011010', '10100101'];
+
+/* Loyiha kartalari uchun SVG vizualizatsiyalar */
+const rect = (x, y, w, h, f, o = {}) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${o.r ?? 4}" fill="${f}"${o.s ? ` stroke="${o.s}" stroke-opacity=".45"` : ''}${o.o ? ` opacity="${o.o}"` : ''}/>`;
+const VIS = {
+  dashboard() {
+    let s = rect(0, 0, 320, 180, '#07102a') + rect(0, 0, 50, 180, '#0b1738');
+    for (let i = 0; i < 5; i++) s += rect(12, 16 + i * 22, 26, 6, i === 1 ? '#00D9FF' : '#2563FF', { r: 3, o: i === 1 ? 1 : .55 });
+    [66, 148, 230].forEach((x, i) => { s += rect(x, 14, 76, 38, '#0f1d44', { r: 8, s: '#2563FF' }) + rect(x + 10, 24, 30, 5, '#9AA8C7', { r: 2, o: .6 }) + rect(x + 10, 36, 46, 8, i === 1 ? '#00D9FF' : '#2563FF', { r: 3 }); });
+    s += rect(66, 62, 170, 104, '#0f1d44', { r: 10, s: '#2563FF' });
+    [34, 56, 44, 72, 52, 80, 64, 88, 60, 76].forEach((h, i) => { s += rect(78 + i * 15, 156 - h, 9, h, i % 3 === 1 ? '#00D9FF' : '#2563FF', { r: 3, o: .9 }); });
+    s += '<path d="M78 128 L108 108 L138 116 L168 88 L198 98 L228 72" fill="none" stroke="#00D9FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>';
+    s += rect(246, 62, 68, 104, '#0f1d44', { r: 10, s: '#2563FF' }) + '<circle cx="280" cy="106" r="22" fill="none" stroke="#1a2c5e" stroke-width="9"/><circle cx="280" cy="106" r="22" fill="none" stroke="#00D9FF" stroke-width="9" stroke-dasharray="86 140" stroke-linecap="round" transform="rotate(-90 280 106)"/>';
+    return s;
+  },
+  ai() {
+    let s = rect(0, 0, 320, 180, '#07102a');
+    s += '<circle cx="252" cy="82" r="46" fill="url(#gOrb)"/><circle cx="252" cy="82" r="62" fill="none" stroke="#00D9FF" stroke-opacity=".25"/><circle cx="252" cy="82" r="80" fill="none" stroke="#2563FF" stroke-opacity=".25" stroke-dasharray="4 6"/>';
+    s += rect(18, 20, 150, 30, '#10214f', { r: 12, s: '#2563FF' }) + rect(30, 29, 92, 5, '#9AA8C7', { r: 2, o: .7 }) + rect(30, 38, 58, 4, '#9AA8C7', { r: 2, o: .4 });
+    s += rect(80, 60, 150, 40, '#12357a', { r: 12 }) + rect(92, 70, 110, 5, '#F4F7FF', { r: 2, o: .85 }) + rect(92, 80, 80, 4, '#F4F7FF', { r: 2, o: .5 }) + rect(92, 89, 50, 4, '#F4F7FF', { r: 2, o: .4 });
+    s += rect(18, 110, 120, 26, '#10214f', { r: 12, s: '#2563FF' }) + rect(30, 120, 70, 5, '#9AA8C7', { r: 2, o: .6 });
+    s += rect(18, 148, 284, 24, '#0b1738', { r: 12, s: '#00D9FF' }) + rect(30, 157, 100, 5, '#9AA8C7', { r: 2, o: .5 }) + '<circle cx="288" cy="160" r="8" fill="url(#gA)"/>';
+    return s;
+  },
+  shop() {
+    let s = rect(0, 0, 320, 180, '#07102a') + rect(0, 0, 320, 22, '#0b1738') + rect(12, 8, 40, 6, 'url(#gA)', { r: 3 }) + rect(240, 7, 64, 8, '#00D9FF', { r: 4, o: .8 });
+    [0, 1, 2, 3].forEach(i => {
+      const x = 14 + i * 76;
+      s += rect(x, 34, 68, 132, '#0f1d44', { r: 10, s: '#2563FF' }) + rect(x + 6, 40, 56, 64, ['#1a3a8a', '#0e5a80', '#23317a', '#0a6a8c'][i], { r: 7 }) + `<circle cx="${x + 34}" cy="72" r="${14 + i * 2}" fill="#00D9FF" opacity=".25"/>` + rect(x + 8, 112, 44, 5, '#9AA8C7', { r: 2, o: .6 }) + rect(x + 8, 122, 28, 6, '#F4F7FF', { r: 3, o: .9 }) + rect(x + 8, 140, 52, 16, 'url(#gA)', { r: 8 });
+    });
+    return s;
+  },
+  ui() {
+    let s = rect(0, 0, 320, 180, '#050816');
+    s += '<g fill="none" stroke="#2563FF" stroke-opacity=".55"><ellipse cx="160" cy="90" rx="120" ry="38"/><ellipse cx="160" cy="90" rx="120" ry="38" transform="rotate(60 160 90)"/><ellipse cx="160" cy="90" rx="120" ry="38" transform="rotate(-60 160 90)"/></g>';
+    s += '<circle cx="160" cy="90" r="36" fill="url(#gOrb)"/><circle cx="160" cy="90" r="9" fill="#F4F7FF"/>';
+    [[44, 90], [276, 90], [100, 34], [220, 146], [100, 146], [220, 34]].forEach(([x, y], i) => { s += `<circle cx="${x}" cy="${y}" r="${4 + i % 3}" fill="${i % 2 ? '#00D9FF' : '#2563FF'}"/>`; });
+    s += '<path d="M10 164 C60 134 100 178 160 154 S260 130 310 154" fill="none" stroke="url(#gA)" stroke-width="2"/>';
+    return s;
+  },
+  game() {
+    let s = rect(0, 0, 320, 180, '#03050f');
+    for (let i = 0; i < 40; i++) s += `<circle cx="${(i * 47) % 320}" cy="${(i * 29) % 180}" r="${i % 3 ? .7 : 1.2}" fill="#9AA8C7" opacity=".6"/>`;
+    const px = (rows, x, y, k, c) => rows.forEach((r, j) => { for (let i = 0; i < r.length; i++) if (r[i] === '1') s += rect(x + i * k, y + j * k, k, k, c, { r: .5 }); });
+    for (let r = 0; r < 3; r++) for (let c = 0; c < 6; c++) px(r % 2 ? SPR_B : SPR_A, 34 + c * 44, 14 + r * 32, 2.6, ['#2563FF', '#00D9FF', '#7aa2ff'][r]);
+    s += '<path d="M160 158 L174 176 L166 172 L154 172 L146 176 Z" fill="#00D9FF"/><rect x="159" y="120" width="2" height="12" fill="#F4F7FF"/><rect x="159" y="96" width="2" height="12" fill="#F4F7FF" opacity=".6"/>';
+    return s;
+  },
+  bot() {
+    let s = rect(0, 0, 320, 180, '#07102a');
+    s += rect(104, 8, 112, 178, '#0b1738', { r: 18, s: '#00D9FF' }) + rect(112, 20, 96, 150, '#0f1d44', { r: 12 });
+    s += rect(120, 30, 62, 16, '#12357a', { r: 8 }) + rect(142, 52, 60, 16, 'url(#gA)', { r: 8 }) + rect(120, 74, 70, 16, '#12357a', { r: 8 });
+    s += rect(120, 106, 76, 16, '#1b2f6b', { r: 8, s: '#00D9FF' }) + rect(120, 126, 76, 16, '#1b2f6b', { r: 8, s: '#00D9FF' }) + rect(120, 146, 76, 14, 'url(#gA)', { r: 7 });
+    s += '<circle cx="52" cy="62" r="24" fill="url(#gOrb)"/><circle cx="268" cy="120" r="28" fill="url(#gOrb)"/>';
+    s += rect(30, 112, 44, 6, '#9AA8C7', { r: 3, o: .4 }) + rect(246, 48, 44, 6, '#9AA8C7', { r: 3, o: .4 });
+    return s;
+  }
+};
+
+/* Mini sintaksis bo'yash (bir o'tishda — xavfsiz) */
+const KW = /^(const|let|var|function|return|import|from|export|default|async|await|new|type|true|false|SELECT|FROM|GROUP|BY|ORDER|LIMIT|AS|COUNT|COPY|CMD|GET|POST|DELETE|git|on|jobs)$/;
+function highlight(src) {
+  return src.replace(/(\/\/.*)|('(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*")|(\b[A-Za-z_]\w*\b)|(\b\d+\b)|([&<>])/g, (m, c, s, w, n, x) => {
+    if (c) return `<span class="c">${esc(c)}</span>`;
+    if (s) return `<span class="s">${esc(s)}</span>`;
+    if (w) return KW.test(w) ? `<span class="k">${w}</span>` : w;
+    if (n) return `<span class="n">${n}</span>`;
+    return esc(x);
+  });
+}
+
+/* =========================================================
+   Dialog yordamchilari
+   ========================================================= */
+function openDlg(d) {
+  if (d.open) return;
+  d.showModal();
+  document.documentElement.classList.add('dlg-open');
+  SFX.play('open');
+}
+function initDialogs() {
+  $$('dialog').forEach(d => {
+    d.addEventListener('close', () => { document.documentElement.classList.remove('dlg-open'); SFX.play('close'); });
+    d.addEventListener('pointerdown', e => { d._down = e.target; });
+    d.addEventListener('click', e => { if (e.target === d && d._down === d) d.close(); });
+  });
+  $$('[data-close]').forEach(b => b.addEventListener('click', () => b.closest('dialog').close()));
+}
+
+/* =========================================================
+   🌌 Interactive Constellation Background
+   ========================================================= */
+function initBg() {
+  const cv = $('#bg'), ctx = cv.getContext('2d');
+  let W, H, dpr, pts = [], stars = [];
+  const mouse = { x: -9999, y: -9999 };
+  const LINK = 130, MR = 170;
+  function build() {
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    W = innerWidth; H = innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.min(Math.floor(W * H / 15000), W < 700 ? 42 : 105);
+    pts = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .4, vy: (Math.random() - .5) * .4, r: Math.random() * 1.4 + .6 }));
+    stars = Array.from({ length: Math.floor(W * H / 9000) }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * .9 + .2, p: Math.random() * 6.28, s: Math.random() * .02 + .005 }));
+    if (REDUCED.matches) frame(true);
+  }
+  function frame(still) {
+    ctx.clearRect(0, 0, W, H);
+    for (const s of stars) {
+      if (!still) s.p += s.s;
+      ctx.globalAlpha = .25 + .3 * Math.sin(s.p);
+      ctx.fillStyle = '#9AA8C7';
+      ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.283); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    for (const p of pts) {
+      if (!still) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < -10) p.x = W + 10; else if (p.x > W + 10) p.x = -10;
+        if (p.y < -10) p.y = H + 10; else if (p.y > H + 10) p.y = -10;
+        const dx = p.x - mouse.x, dy = p.y - mouse.y, d = Math.hypot(dx, dy);
+        if (d < MR && d > 1) { const f = (1 - d / MR) * .9; p.x += dx / d * f; p.y += dy / d * f; }
+      }
+    }
+    ctx.lineWidth = .7;
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i];
+      for (let j = i + 1; j < pts.length; j++) {
+        const b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < LINK) { ctx.strokeStyle = `rgba(0,217,255,${(1 - d / LINK) * .32})`; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+      }
+      const md = Math.hypot(a.x - mouse.x, a.y - mouse.y);
+      if (md < MR) { ctx.strokeStyle = `rgba(37,130,255,${(1 - md / MR) * .65})`; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke(); }
+      ctx.fillStyle = md < MR ? '#7fe9ff' : 'rgba(120,190,255,.75)';
+      ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.283); ctx.fill();
+    }
+  }
+  build();
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(build, 150); });
+  if (REDUCED.matches) return;
+  addEventListener('pointermove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+  document.addEventListener('mouseleave', () => { mouse.x = mouse.y = -9999; });
+  (function loop() { frame(false); requestAnimationFrame(loop); })();
+}
+
+/* =========================================================
+   🖱️ Custom Cyber Cursor
+   ========================================================= */
+function initCursor() {
+  if (!FINE.matches || REDUCED.matches) return;
+  const dot = $('.cursor-dot'), ring = $('.cursor-ring');
+  let mx = -100, my = -100, rx = -100, ry = -100;
+  document.documentElement.classList.add('has-cursor');
+  addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; dot.style.transform = `translate3d(${mx}px,${my}px,0)`; }, { passive: true });
+  (function loop() { rx += (mx - rx) * .18; ry += (my - ry) * .18; ring.style.transform = `translate3d(${rx}px,${ry}px,0)`; requestAnimationFrame(loop); })();
+  const HOT = 'a,button,input,textarea,label,[data-hover],.skill-chip';
+  document.addEventListener('pointerover', e => { ring.classList.toggle('hot', !!(e.target.closest && e.target.closest(HOT))); });
+  addEventListener('pointerdown', () => ring.classList.add('down'));
+  addEventListener('pointerup', () => ring.classList.remove('down'));
+  document.addEventListener('mouseleave', () => { dot.style.opacity = 0; ring.style.opacity = 0; });
+  document.addEventListener('mouseenter', () => { dot.style.opacity = ''; ring.style.opacity = ''; });
+}
+
+/* =========================================================
+   Navbar, menyu, scroll, reveal, counters
+   ========================================================= */
+function initNav() {
+  const nav = $('#nav'), prog = $('#progress');
+  let tick = false;
+  const onScroll = () => {
+    if (tick) return; tick = true;
+    requestAnimationFrame(() => {
+      const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
+      nav.classList.toggle('scrolled', y > 20);
+      prog.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+      tick = false;
+    });
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  const links = $$('.nav-links a');
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.dataset.nav === e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ['home', 'about', 'skills', 'projects', 'experience', 'services', 'contact'].forEach(id => { const s = document.getElementById(id); s && io.observe(s); });
+
+  const b = $('#burger'), m = $('#mmenu');
+  const set = o => {
+    b.setAttribute('aria-expanded', o); b.setAttribute('aria-label', o ? 'Menyuni yopish' : 'Menyuni ochish');
+    m.classList.toggle('open', o); m.setAttribute('aria-hidden', !o);
+    document.documentElement.classList.toggle('menu-open', o);
+  };
+  b.addEventListener('click', () => set(b.getAttribute('aria-expanded') !== 'true'));
+  $$('a', m).forEach(a => a.addEventListener('click', () => set(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && m.classList.contains('open')) set(false); });
+  matchMedia('(min-width:1240px)').addEventListener('change', e => e.matches && set(false));
+
+  $('#toTop').addEventListener('click', () => scrollTo({ top: 0, behavior: REDUCED.matches ? 'auto' : 'smooth' }));
+}
+
+function initReveal() {
+  const els = $$('.reveal:not(.in)');
+  if (!('IntersectionObserver' in window) || REDUCED.matches) { els.forEach(e => e.classList.add('in')); return; }
+  const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(e => io.observe(e));
+}
+
+function initCounters() {
+  const run = el => {
+    const to = +el.dataset.count, suf = el.dataset.suffix || '';
+    if (REDUCED.matches) { el.textContent = to + suf; return; }
+    const t0 = performance.now(), d = 1400;
+    (function f(n) {
+      const p = Math.min((n - t0) / d, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(to * e) + suf;
+      if (p < 1) requestAnimationFrame(f);
+    })(t0);
+  };
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } }), { threshold: .6 });
+  $$('[data-count]').forEach(el => io.observe(el));
+}
+
+function initSpot() {
+  const fx = FINE.matches && !REDUCED.matches;
+  document.addEventListener('pointermove', e => {
+    const c = e.target.closest && e.target.closest('[data-spot]');
+    if (!c) return;
+    const r = c.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+    c.style.setProperty('--mx', x + 'px'); c.style.setProperty('--my', y + 'px');
+    if (fx && c.classList.contains('tilt')) {
+      const px = x / r.width - .5, py = y / r.height - .5;
+      c.style.transform = `perspective(900px) rotateX(${(-py * 6).toFixed(2)}deg) rotateY(${(px * 8).toFixed(2)}deg)`;
+    }
+  }, { passive: true });
+  document.addEventListener('pointerout', e => {
+    const c = e.target.closest && e.target.closest('.tilt');
+    if (c && !c.contains(e.relatedTarget)) c.style.transform = '';
+  });
+}
+
+function initTyper() {
+  const el = $('#typed');
+  const roles = ['Senior Full-Stack Developer', 'Creative Frontend Developer', 'UI/UX & Motion Enthusiast', 'Telegram WebApp Builder'];
+  if (REDUCED.matches) { el.textContent = 'Senior Full-Stack & Creative Frontend Developer'; return; }
+  let i = 0, j = 0, del = false;
+  (function tick() {
+    const w = roles[i]; j += del ? -1 : 1; el.textContent = w.slice(0, j);
+    let d = del ? 32 : 68;
+    if (!del && j === w.length) { del = true; d = 1700; }
+    else if (del && j === 0) { del = false; i = (i + 1) % roles.length; d = 350; }
+    setTimeout(tick, d);
+  })();
+}
+
+/* =========================================================
+   Ko'nikmalar kartalari
+   ========================================================= */
+function renderSkills() {
+  const root = $('#skillsGrid');
+  SKILLS.forEach((cat, ci) => {
+    const card = document.createElement('article');
+    card.className = 'skill-card glass reveal'; card.dataset.spot = ''; card.style.setProperty('--d', (ci * .1) + 's');
+    card.innerHTML = `<header><span class="skill-ico"><svg class="ic" aria-hidden="true"><use href="#${cat.icon}"/></svg></span><div><h3>${cat.title}</h3><small>${cat.sub}</small></div></header>
+      <div class="chips">${cat.items.map((s, i) => `<button class="skill-chip" type="button" data-i="${i}">${s.n}</button>`).join('')}</div>
+      <div class="code-panel" aria-live="polite"><div class="code-head"><span class="fname"></span><b class="pct"></b></div><div class="lvl"><i></i></div><pre><code></code></pre></div>`;
+    root.appendChild(card);
+    const chips = $$('.skill-chip', card), pre = $('pre', card), code = $('code', card), bar = $('.lvl i', card);
+    const show = i => {
+      const s = cat.items[i];
+      chips.forEach((c, k) => c.classList.toggle('on', k === i));
+      $('.fname', card).textContent = s.f; $('.pct', card).textContent = s.n + ' · ' + s.l + '%';
+      bar.style.width = s.l + '%';
+      code.innerHTML = highlight(s.c);
+      if (!REDUCED.matches) { pre.classList.remove('flash'); void pre.offsetWidth; pre.classList.add('flash'); }
+    };
+    chips.forEach((c, i) => ['mouseenter', 'focus', 'click'].forEach(ev => c.addEventListener(ev, () => show(i))));
+    show(0);
+  });
+}
+
+/* =========================================================
+   Loyihalar: render, filtr, case study
+   ========================================================= */
+function renderProjects() {
+  const grid = $('#projectsGrid');
+  grid.innerHTML = PROJECTS.map((p, i) => {
+    const ph = u => u === '#' ? 'data-ph' : 'target="_blank" rel="noopener noreferrer"';
+    return `<article class="project glass tilt reveal" data-spot data-cat="${p.cat}" style="--d:${(i % 3) * .08}s">
+      <div class="project-vis"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">${VIS[p.vis]()}</svg></div>
+      <div class="project-body">
+        <span class="badge">${CATS[p.cat]}</span>
+        <h3>${p.title}</h3><p>${p.short}</p>
+        <ul class="tags">${p.tags.map(t => `<li>${t}</li>`).join('')}</ul>
+        <div class="project-actions">
+          <a class="linkbtn" href="${p.demo}" ${ph(p.demo)}><svg class="ic" aria-hidden="true"><use href="#i-external"/></svg>Demo Ko'rish</a>
+          <a class="linkbtn" href="${p.repo}" ${ph(p.repo)}><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>GitHub Kod</a>
+          <button class="btn btn-ghost btn-sm" type="button" data-case="${p.id}">Batafsil (Case Study) <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div></article>`;
+  }).join('');
+
+  const fbox = $('#filters');
+  fbox.innerHTML = FILTERS.map(([k, l], i) => `<button class="filter" type="button" data-f="${k}" aria-pressed="${i === 0}">${l}</button>`).join('');
+  fbox.addEventListener('click', e => {
+    const b = e.target.closest('.filter'); if (!b) return;
+    $$('.filter', fbox).forEach(x => x.setAttribute('aria-pressed', x === b));
+    $$('.project', grid).forEach(c => {
+      const show = b.dataset.f === 'all' || c.dataset.cat === b.dataset.f;
+      c.classList.toggle('is-hidden', !show);
+      if (show && !REDUCED.matches) { c.classList.remove('pop'); void c.offsetWidth; c.classList.add('pop'); }
+    });
+  });
+
+  grid.addEventListener('click', e => {
+    const cb = e.target.closest('[data-case]');
+    if (cb) App.openCase(+cb.dataset.case);
+    const ph = e.target.closest('[data-ph]');
+    if (ph) { e.preventDefault(); toast("Bu havola hali sozlanmagan — PROJECTS massivida demo/repo manzilini kiriting.", 'info'); }
+  });
+}
+
+App.openCase = id => {
+  const p = PROJECTS.find(x => x.id === id); if (!p) return;
+  const c = p.case, li = a => a.map(x => `<li>${x}</li>`).join('');
+  const link = (u, t, ic) => u === '#' ? `<a class="btn btn-ghost btn-sm" href="#" data-ph><svg class="ic" aria-hidden="true"><use href="#${ic}"/></svg>${t}</a>` : `<a class="btn btn-ghost btn-sm" href="${u}" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true"><use href="#${ic}"/></svg>${t}</a>`;
+  $('#caseBody').innerHTML = `<span class="badge">${CATS[p.cat]}</span>
+    <h3 id="caseTitle">${p.title}</h3><p>${p.short}</p>
+    <div class="case-meta"><div><small>ROL</small><b>${c.role}</b></div><div><small>MUDDAT</small><b>${c.time}</b></div><div><small>STACK</small><b>${p.tags.join(' · ')}</b></div></div>
+    <h4>Maqsad</h4><p>${c.goal}</p>
+    <h4>Arxitektura</h4><div class="flow">${c.flow.map(n => `<span>${n}</span>`).join('<i>→</i>')}</div>
+    <h4>Bajarilgan ishlar</h4><ul class="check">${li(c.work)}</ul>
+    <h4>Natija</h4><ul class="check">${li(c.result)}</ul>
+    <div class="case-actions">${link(p.demo, "Demo Ko'rish", 'i-external')}${link(p.repo, 'GitHub Kod', 'i-github')}</div>`;
+  $('#caseBody').parentElement.scrollTop = 0;
+  openDlg($('#caseDlg'));
+};
+
+/* =========================================================
+   💻 Interaktiv terminal
+   ========================================================= */
+function initTerminal() {
+  const body = $('#termBody'), input = $('#termInput'), chips = $('#termChips'), form = $('#termForm');
+  const hist = []; let hi = 0;
+  const P = 'visitor@aq:~$';
+  const line = (t, cls = '') => { const d = document.createElement('div'); d.className = 'term-line ' + cls; d.textContent = t; body.appendChild(d); body.scrollTop = body.scrollHeight; return d; };
+  const html = (h, cls = '') => { const d = document.createElement('div'); d.className = 'term-line ' + cls; d.innerHTML = h; body.appendChild(d); body.scrollTop = body.scrollHeight; };
+
+  const C = {
+    help() {
+      ['Mavjud buyruqlar:', '  help          buyruqlar ro\'yxati', '  whoami        men haqimda qisqacha', '  about         batafsil tanishuv', '  skills        texnik ko\'nikmalar', '  projects      loyihalar (open <n> — case study)', '  contact       aloqa ma\'lumotlari', '  social        ijtimoiy tarmoqlar', '  game          Cyber Arcade\'ni ishga tushirish', '  sound on|off  ovoz effektlari', '  clear         terminalni tozalash']
+        .forEach((t, i) => line(t, i ? '' : 'ok'));
+    },
+    whoami() { [CONFIG.fullName, 'Senior Full-Stack & Creative Frontend Developer', "Joylashuv: O'zbekiston · Tajriba: 4+ yil", 'Status: yangi loyihalar uchun ochiq ✔'].forEach((t, i) => line(t, i === 3 ? 'ok' : '')); },
+    about() { ['Dasturlashga ishtiyoq bitta savoldan boshlangan: «Bu qanday ishlaydi?»', 'Bugun esa toza kod, yuqori unumdorlik va esda qolarli UI/UX bilan', "g'oyalarni ishlaydigan raqamli mahsulotlarga aylantiraman."].forEach(t => line(t)); },
+    skills() { SKILLS.forEach(c => line(c.title.padEnd(21) + ': ' + c.items.map(i => i.n).join(', '))); },
+    projects() {
+      PROJECTS.forEach(p => { line(`[${p.id}] ${p.title}`); line('    ' + p.tags.join(' · '), 'dim'); });
+      line("Case study uchun: open <raqam>", 'ok');
+    },
+    open(a) {
+      const n = +a[0], p = PROJECTS.find(x => x.id === n);
+      if (!p) return line('Foydalanish: open <1-' + PROJECTS.length + '>', 'err');
+      line(`"${p.title}" ochilmoqda…`, 'ok'); setTimeout(() => App.openCase(n), 250);
+    },
+    contact() {
+      html(`Email    : <a href="mailto:${CONFIG.email}">${CONFIG.email}</a>`);
+      html(`Telegram : <a href="${CONFIG.telegram}" target="_blank" rel="noopener noreferrer">${CONFIG.telegram}</a>`);
+      line("Yoki sahifadagi aloqa formasidan foydalaning ↓", 'dim');
+    },
+    social() {
+      html(`GitHub   : <a href="${CONFIG.github}" target="_blank" rel="noopener noreferrer">${CONFIG.github}</a>`);
+      html(`LinkedIn : <a href="${CONFIG.linkedin}" target="_blank" rel="noopener noreferrer">${CONFIG.linkedin}</a>`);
+      html(`Telegram : <a href="${CONFIG.telegram}" target="_blank" rel="noopener noreferrer">${CONFIG.telegram}</a>`);
+    },
+    clear() { body.innerHTML = ''; },
+    sound(a) {
+      const v = (a[0] || '').toLowerCase();
+      if (v !== 'on' && v !== 'off') return line('Foydalanish: sound on | sound off', 'err');
+      App.setSound(v === 'on'); line('Ovoz effektlari: ' + (v === 'on' ? 'yoqildi' : "o'chirildi"), 'ok');
+    },
+    game() { line('Cyber Arcade yuklanmoqda…', 'ok'); setTimeout(() => App.openGame(), 300); },
+    ls() { line('home/  about/  skills/  projects/  process/  experience/  services/  contact/'); },
+    sudo() { line("Ruxsat berildi ✔  Azizbek bilan ishlash uchun 'contact' deb yozing 😉", 'ok'); },
+    echo(a) { line(a.join(' ')); },
+    exit() { line("Bu yerdan chiqib bo'lmaydi 😄  'clear' ni sinab ko'ring.", 'dim'); }
+  };
+  const names = Object.keys(C);
+
+  function run(raw) {
+    const v = raw.trim();
+    const d = document.createElement('div'); d.className = 'term-line cmd';
+    const p = document.createElement('span'); p.className = 'p'; p.textContent = P + ' ';
+    d.append(p, document.createTextNode(raw)); body.appendChild(d);
+    if (!v) return;
+    hist.push(v); hi = hist.length;
+    const [c, ...args] = v.split(/\s+/), name = c.toLowerCase();
+    if (Object.prototype.hasOwnProperty.call(C, name)) C[name](args);
+    else { line(`buyruq topilmadi: ${c}. 'help' deb yozing.`, 'err'); SFX.play('error'); }
+    body.scrollTop = body.scrollHeight;
+  }
+  form.addEventListener('submit', e => { e.preventDefault(); const v = input.value; input.value = ''; run(v); });
+  input.addEventListener('keydown', e => {
+    if (e.key === 'ArrowUp') { e.preventDefault(); if (hi > 0) hi--; input.value = hist[hi] || ''; }
+    else if (e.key === 'ArrowDown') { e.preventDefault(); if (hi < hist.length) hi++; input.value = hist[hi] || ''; }
+    else if (e.key === 'Tab') { e.preventDefault(); const m = names.filter(n => n.startsWith(input.value.toLowerCase())); if (m.length === 1) input.value = m[0]; }
+    else if (e.key === 'l' && e.ctrlKey) { e.preventDefault(); C.clear(); }
+    else if (e.key.length === 1) SFX.play('key');
+  });
+  body.addEventListener('click', () => { if (!getSelection().toString()) input.focus({ preventScroll: true }); });
+
+  ['help', 'whoami', 'skills', 'projects', 'contact', 'game'].forEach(c => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = c;
+    b.addEventListener('click', () => { run(c); input.focus({ preventScroll: true }); });
+    chips.appendChild(b);
+  });
+  line('AQ-OS v2.6 — interaktiv terminal ishga tushdi.', 'ok');
+  line("Boshlash uchun 'help' deb yozing yoki quyidagi tugmalarni bosing.", 'dim');
+
+  App.focusTerminal = () => {
+    const w = $('#termWrap');
+    $('#home').scrollIntoView({ behavior: REDUCED.matches ? 'auto' : 'smooth' });
+    w.classList.add('flash'); setTimeout(() => w.classList.remove('flash'), 1200);
+    setTimeout(() => input.focus({ preventScroll: true }), 450);
+  };
+}
+
+/* =========================================================
+   Aloqa formasi, nusxalash, CV, ijtimoiy havolalar
+   ========================================================= */
+function initForm() {
+  const f = $('#contactForm');
+  const rules = {
+    name: v => v.trim().length >= 2 || "Ismingizni kiriting (kamida 2 belgi)",
+    email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || "To'g'ri email manzil kiriting",
+    subject: v => v.trim().length >= 3 || "Mavzuni yozing (kamida 3 belgi)",
+    message: v => v.trim().length >= 10 || "Xabar kamida 10 belgidan iborat bo'lsin"
+  };
+  const check = n => {
+    const el = f.elements[n], r = rules[n](el.value), box = el.closest('.field'), ok = r === true;
+    box.classList.toggle('invalid', !ok); el.setAttribute('aria-invalid', String(!ok));
+    $('#' + n + '-e').textContent = ok ? '' : r; return ok;
+  };
+  Object.keys(rules).forEach(n => {
+    const el = f.elements[n];
+    el.addEventListener('blur', () => { if (el.value || el.closest('.field').classList.contains('invalid')) check(n); });
+    el.addEventListener('input', () => { if (el.closest('.field').classList.contains('invalid')) check(n); });
+  });
+  const cnt = $('#msgCount'); f.elements.message.addEventListener('input', e => { cnt.textContent = e.target.value.length + '/1000'; });
+
+  f.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (f.elements.company.value) return; // honeypot
+    const ok = Object.keys(rules).map(check).every(Boolean);
+    if (!ok) { SFX.play('error'); toast("Iltimos, formadagi xatolarni to'g'rilang", 'error'); const bad = f.querySelector('.invalid input,.invalid textarea'); bad && bad.focus(); return; }
+    const data = { name: f.elements.name.value.trim(), email: f.elements.email.value.trim(), subject: f.elements.subject.value.trim(), message: f.elements.message.value.trim(), budget: (f.querySelector('input[name=budget]:checked') || {}).value || '—' };
+    const btn = $('#sendBtn'), lbl = $('span', btn); btn.disabled = true; lbl.textContent = 'Yuborilmoqda…';
+    const done = () => { f.reset(); cnt.textContent = '0/1000'; };
+    if (CONFIG.formEndpoint) {
+      try {
+        const r = await fetch(CONFIG.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
+        if (!r.ok) throw new Error('http ' + r.status);
+        SFX.play('success'); toast('Xabaringiz yuborildi! Tez orada javob beraman.', 'success'); done();
+      } catch (err) { SFX.play('error'); toast("Yuborib bo'lmadi. Iltimos, email orqali yozing: " + CONFIG.email, 'error', 6000); }
+    } else {
+      const body = `Ism: ${data.name}\nEmail: ${data.email}\nByudjet: ${data.budget}\n\n${data.message}`;
+      location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(body)}`;
+      SFX.play('success'); toast("Pochta ilovangiz ochilmoqda — xabarni u yerdan yuboring.", 'success', 5500); done();
+    }
+    btn.disabled = false; lbl.textContent = 'Xabarni Yuborish';
+  });
+
+  $$('[data-subject]').forEach(a => a.addEventListener('click', () => { f.elements.subject.value = a.dataset.subject; }));
+
+  $('#copyEmail').addEventListener('click', async () => {
+    let ok = false;
+    try { await navigator.clipboard.writeText(CONFIG.email); ok = true; }
+    catch (e) {
+      const t = document.createElement('textarea'); t.value = CONFIG.email; t.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (er) {} t.remove();
+    }
+    if (ok) { SFX.play('success'); toast('Email nusxalandi: ' + CONFIG.email, 'success', 2800); }
+    else toast("Nusxalab bo'lmadi. Qo'lda nusxalang: " + CONFIG.email, 'error');
+  });
+}
+
+function initLinks() {
+  $$('[data-email]').forEach(e => { e.textContent = CONFIG.email; });
+  $$('[data-social]').forEach(a => {
+    const k = a.dataset.social;
+    a.href = k === 'email' ? 'mailto:' + CONFIG.email : CONFIG[k];
+    if (k !== 'email') { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+  });
+  $('#cvBtn').addEventListener('click', () => {
+    if (CONFIG.cvUrl) { window.open(CONFIG.cvUrl, '_blank', 'noopener'); return; }
+    const tl = $$('.t-item').map(i => `  ${$('.t-date', i).textContent}  ${$('h3', i).textContent} — ${$('.t-org', i).textContent}`).join('\n');
+    const sk = SKILLS.map(c => `  ${c.title}: ${c.items.map(i => i.n).join(', ')}`).join('\n');
+    const txt = `${CONFIG.fullName}\nSenior Full-Stack & Creative Frontend Developer\n${'='.repeat(48)}\n\nAloqa\n  Email: ${CONFIG.email}\n  Telegram: ${CONFIG.telegram}\n  GitHub: ${CONFIG.github}\n  LinkedIn: ${CONFIG.linkedin}\n  Joylashuv: O'zbekiston\n\nTexnik ko'nikmalar\n${sk}\n\nTajriba va ta'lim\n${tl}\n`;
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([txt], { type: 'text/plain;charset=utf-8' }));
+    a.download = 'Azizbek_Qulmurodov_CV.txt'; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1500);
+    toast("CV yuklab olindi. PDF uchun CONFIG.cvUrl ga havola kiriting.", 'success', 5000);
+  });
+}
+
+/* =========================================================
+   Ovoz tugmasi va global ovoz hodisalari
+   ========================================================= */
+function initSound() {
+  const sb = $('#soundBtn');
+  const sync = () => {
+    sb.setAttribute('aria-pressed', String(SFX.on));
+    const t = 'Ovoz effektlari: ' + (SFX.on ? 'yoqilgan' : "o'chiq");
+    sb.title = t; sb.setAttribute('aria-label', t);
+    if (SFX.on) sb.classList.remove('pulse-hint');
+  };
+  App.setSound = v => { SFX.setEnabled(v); sync(); };
+  sb.addEventListener('click', () => {
+    App.setSound(!SFX.on); sb.classList.remove('pulse-hint');
+    toast(SFX.on ? 'Kiber ovoz effektlari yoqildi 🔊' : "Ovoz effektlari o'chirildi 🔇", 'info', 2200);
+  });
+  sync();
+  $('#termBtn').addEventListener('click', () => { SFX.play('open'); App.focusTerminal(); });
+
+  const SND = 'a[href],button,.project,.service,.step,.skill-card,.t-item,.stat,.info-panel,.c-row,[data-sfx]';
+  document.addEventListener('mouseover', e => { const el = e.target.closest && e.target.closest(SND); if (el && !el.contains(e.relatedTarget)) SFX.play('hover'); });
+  document.addEventListener('click', e => { if (e.target.closest && e.target.closest('a[href],button')) SFX.play('click'); });
+  addEventListener('pointerdown', () => SFX.unlock(), { passive: true });
+}
+
+/* =========================================================
+   🕹️ Cyber Arcade (Space Invaders uslubida)
+   ========================================================= */
+function initGame() {
+  const dlg = $('#gameDlg'), cv = $('#game'), ctx = cv.getContext('2d');
+  const W = 480, H = 640;
+  const HUD = { score: $('#gScore'), lives: $('#gLives'), level: $('#gLevel'), hi: $('#gHi') };
+  const keys = { left: false, right: false, fire: false };
+  let st = 'idle', raf = 0, last = 0, score = 0, lives = 3, level = 1, hi = +(store.get('aq-hi') || 0);
+  let ship, bullets, enemies, ebullets, parts, dir, cool, ecool, inv, total, banner = null;
+  const stars = Array.from({ length: 60 }, () => ({ x: Math.random() * W, y: Math.random() * H, s: Math.random() * 40 + 10, r: Math.random() * 1.3 + .3 }));
+  const COLORS = ['#2563FF', '#00D9FF', '#7aa2ff', '#4fd1ff', '#2563FF', '#00D9FF'];
+
+  function hud() {
+    HUD.score.textContent = score; HUD.level.textContent = level; HUD.hi.textContent = hi;
+    HUD.lives.textContent = '♥'.repeat(Math.max(lives, 0)) || '—';
+  }
+  function spawn() {
+    enemies = []; const rows = Math.min(3 + level, 6);
+    for (let r = 0; r < rows; r++) for (let c = 0; c < 8; c++) enemies.push({ x: 40 + c * 48, y: 70 + r * 38, r, dead: false });
+    total = enemies.length; dir = 1;
+  }
+  function start() {
+    score = 0; lives = 3; level = 1; ship = { x: W / 2, y: H - 56 };
+    bullets = []; ebullets = []; parts = []; inv = 0; cool = 0; ecool = 1; banner = null;
+    spawn(); st = 'play'; hud();
+  }
+  function burst(x, y, color, n = 14) {
+    for (let i = 0; i < n; i++) { const a = Math.random() * 6.283, s = 40 + Math.random() * 160; parts.push({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, life: .5 + Math.random() * .4, c: color }); }
+  }
+  function over() {
+    st = 'over'; SFX.play('lose');
+    if (score > hi) { hi = score; store.set('aq-hi', String(hi)); }
+    hud();
+  }
+  function hurt() {
+    lives--; inv = 1.8; burst(ship.x, ship.y, '#00D9FF', 24); SFX.play('hurt'); hud();
+    if (lives <= 0) over();
+  }
+  function update(dt) {
+    const mv = (keys.right ? 1 : 0) - (keys.left ? 1 : 0);
+    ship.x = Math.max(22, Math.min(W - 22, ship.x + mv * 340 * dt));
+    cool -= dt; if (keys.fire && cool <= 0) { bullets.push({ x: ship.x, y: ship.y - 16 }); cool = .3; SFX.play('shoot'); }
+    inv = Math.max(0, inv - dt);
+    bullets.forEach(b => b.y -= 560 * dt); bullets = bullets.filter(b => b.y > -20);
+
+    const alive = enemies.filter(e => !e.dead);
+    const sp = 34 + level * 7 + (1 - alive.length / total) * 110;
+    let minX = 1e9, maxX = -1e9, maxY = 0;
+    alive.forEach(e => { e.x += dir * sp * dt; minX = Math.min(minX, e.x); maxX = Math.max(maxX, e.x + 24); maxY = Math.max(maxY, e.y + 24); });
+    if ((dir > 0 && maxX >= W - 10) || (dir < 0 && minX <= 10)) { dir *= -1; alive.forEach(e => e.y += 16); }
+    if (maxY >= ship.y - 10) { over(); return; }
+
+    for (const b of bullets) for (const e of alive) {
+      if (!e.dead && b.y > e.y && b.y < e.y + 24 && b.x > e.x - 2 && b.x < e.x + 26) {
+        e.dead = true; b.y = -99; score += 30 - Math.min(e.r, 2) * 10;
+        burst(e.x + 12, e.y + 12, COLORS[e.r % 6]); SFX.play('boom'); hud(); break;
+      }
+    }
+    enemies = enemies.filter(e => !e.dead);
+
+    ecool -= dt;
+    if (ecool <= 0 && enemies.length) {
+      const e = enemies[Math.floor(Math.random() * enemies.length)];
+      ebullets.push({ x: e.x + 12, y: e.y + 24 });
+      ecool = Math.max(.35, 1.1 - level * .1) * (.6 + Math.random() * .8);
+    }
+    ebullets.forEach(b => b.y += (230 + level * 18) * dt);
+    if (!inv) for (const b of ebullets) {
+      if (Math.abs(b.x - ship.x) < 16 && b.y > ship.y - 12 && b.y < ship.y + 14) { b.y = H + 50; hurt(); break; }
+    }
+    ebullets = ebullets.filter(b => b.y < H + 20);
+
+    if (st === 'play' && !enemies.length) {
+      level++; score += 100; banner = { text: 'DARAJA ' + level, t: 1.6 }; SFX.play('win'); ebullets = []; spawn(); hud();
+    }
+  }
+  function sprite(rows, x, y, s, color) {
+    ctx.fillStyle = color;
+    rows.forEach((r, j) => { for (let i = 0; i < r.length; i++) if (r[i] === '1') ctx.fillRect(x + i * s, y + j * s, s, s); });
+  }
+  function centerText(t, y, size, color) {
+    ctx.font = `bold ${size}px "JetBrains Mono",monospace`; ctx.textAlign = 'center'; ctx.fillStyle = color; ctx.fillText(t, W / 2, y);
+  }
+  function draw(dt) {
+    ctx.fillStyle = '#03050f'; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = '#9AA8C7';
+    stars.forEach(s => { s.y += s.s * dt; if (s.y > H) { s.y = 0; s.x = Math.random() * W; } ctx.globalAlpha = s.r / 2; ctx.fillRect(s.x, s.y, s.r, s.r); });
+    ctx.globalAlpha = 1;
+    if (st !== 'idle') {
+      enemies.forEach(e => sprite(e.r % 2 ? SPR_B : SPR_A, e.x, e.y, 3, COLORS[e.r % 6]));
+      ctx.shadowColor = '#00D9FF'; ctx.shadowBlur = 12; ctx.fillStyle = '#F4F7FF';
+      bullets.forEach(b => ctx.fillRect(b.x - 1.5, b.y, 3, 12));
+      ctx.shadowColor = '#ff5a78'; ctx.fillStyle = '#ff7a90';
+      ebullets.forEach(b => ctx.fillRect(b.x - 1.5, b.y, 3, 12));
+      if (st === 'play' || st === 'pause') {
+        if (!inv || Math.floor(performance.now() / 90) % 2) {
+          ctx.shadowColor = '#00D9FF'; ctx.fillStyle = '#00D9FF';
+          ctx.beginPath(); ctx.moveTo(ship.x, ship.y - 14); ctx.lineTo(ship.x + 18, ship.y + 12); ctx.lineTo(ship.x + 7, ship.y + 7); ctx.lineTo(ship.x - 7, ship.y + 7); ctx.lineTo(ship.x - 18, ship.y + 12); ctx.closePath(); ctx.fill();
+        }
+      }
+      ctx.shadowBlur = 0;
+      if (st === 'play') parts.forEach(p => { p.x += p.vx * dt; p.y += p.vy * dt; p.life -= dt; });
+      parts = parts.filter(p => p.life > 0);
+      parts.forEach(p => { ctx.globalAlpha = Math.min(1, p.life * 2); ctx.fillStyle = p.c; ctx.fillRect(p.x, p.y, 3, 3); });
+      ctx.globalAlpha = 1;
+    }
+    if (banner) { banner.t -= dt; centerText(banner.text, H / 2, 30, '#00D9FF'); if (banner.t <= 0) banner = null; }
+    if (st === 'idle') {
+      centerText('CYBER ARCADE', H / 2 - 40, 34, '#00D9FF');
+      centerText('Boshlash: Enter / Space', H / 2 + 6, 15, '#F4F7FF');
+      centerText('yoki ekranga bosing', H / 2 + 30, 13, '#9AA8C7');
+    } else if (st === 'over') {
+      centerText("O'YIN TUGADI", H / 2 - 40, 32, '#ff7a90');
+      centerText('Ball: ' + score + '  ·  Rekord: ' + hi, H / 2 + 4, 16, '#F4F7FF');
+      centerText('Qayta boshlash: Enter', H / 2 + 36, 14, '#9AA8C7');
+    } else if (st === 'pause') centerText('PAUZA', H / 2, 32, '#00D9FF');
+  }
+  function loop(ts) {
+    raf = requestAnimationFrame(loop);
+    const dt = Math.min((ts - last) / 1000 || 0, .05); last = ts;
+    if (st === 'play') update(dt);
+    draw(dt);
+  }
+  App.openGame = () => {
+    openDlg(dlg); st = 'idle'; score = 0; lives = 3; level = 1; ship = { x: W / 2, y: H - 56 }; enemies = []; bullets = []; ebullets = []; parts = []; inv = 0; banner = null;
+    hud(); last = performance.now(); cancelAnimationFrame(raf); raf = requestAnimationFrame(loop);
+  };
+  dlg.addEventListener('close', () => { cancelAnimationFrame(raf); Object.keys(keys).forEach(k => keys[k] = false); $$('.pad button').forEach(b => b.classList.remove('down')); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden && st === 'play' && dlg.open) st = 'pause'; });
+
+  const KM = { ArrowLeft: 'left', a: 'left', A: 'left', ArrowRight: 'right', d: 'right', D: 'right', ' ': 'fire' };
+  addEventListener('keydown', e => {
+    if (!dlg.open) return;
+    if (KM[e.key]) { keys[KM[e.key]] = true; if (e.key === ' ' || e.key.startsWith('Arrow')) e.preventDefault(); if (e.key === ' ' && (st === 'idle' || st === 'over')) start(); }
+    else if (e.key === 'Enter' && (st === 'idle' || st === 'over')) start();
+    else if ((e.key === 'p' || e.key === 'P') && (st === 'play' || st === 'pause')) st = st === 'play' ? 'pause' : 'play';
+  });
+  addEventListener('keyup', e => { if (!dlg.open) return; if (KM[e.key]) { keys[KM[e.key]] = false; if (e.key === ' ') e.preventDefault(); } });
+  cv.addEventListener('pointerdown', () => { if (st === 'idle' || st === 'over') start(); else if (st === 'pause') st = 'play'; });
+  $$('.pad button').forEach(b => {
+    const k = b.dataset.k;
+    const down = e => { e.preventDefault(); keys[k] = true; b.classList.add('down'); if (k === 'fire' && (st === 'idle' || st === 'over')) start(); };
+    const up = () => { keys[k] = false; b.classList.remove('down'); };
+    b.addEventListener('pointerdown', down);
+    ['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => b.addEventListener(ev, up));
+  });
+  $$('[data-game]').forEach(b => b.addEventListener('click', () => App.openGame()));
+}
+
+/* =========================================================
+   ISHGA TUSHIRISH
+   ========================================================= */
+renderSkills();
+renderProjects();
+initDialogs();
+initBg();
+initCursor();
+initNav();
+initSpot();
+initTyper();
+initTerminal();
+initForm();
+initLinks();
+initSound();
+initGame();
+initCounters();
+initReveal();
+console.log('%cAQ // Azizbek Qulmurodov', 'color:#00D9FF;font:700 16px monospace;text-shadow:0 0 8px #00D9FF', '\nTerminalda "help" deb yozib ko\'ring 😉');
+})();
+</script>
+</body>
+</html>
